@@ -1,7 +1,7 @@
 {
-  "name": "heaven",
+  "name": "heaven-ui",
   "version": "1.0.0",
-  "description": "这是一个UI框架",
+  "description": "这是一个vue的UI框架",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
