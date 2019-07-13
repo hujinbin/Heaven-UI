@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/hujinbin/Heaven-UI/issues"
   },
-  "homepage": "https://github.com/hujinbin/Heaven-UI#readme"
+  "homepage": "https://github.com/hujinbin/Heaven-UI#readme",
+  "dependencies": {
+    "vue": "^2.6.10"
+  }
 }
