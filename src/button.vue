@@ -1,6 +1,7 @@
 <template>
-    <button class="h-button">
-      <span v-if="icon" :class="icon"></span>
+    <button class="h-button" @click="$emit(click)">
+      <h-icon v-if="icon && !loading" :name="icon"><h-icon>
+         <h-icon v-if="loading" name="loading"><h-icon>
       <slot></slot>
     </button>
 </template>
@@ -10,10 +11,17 @@ export default {
   name: 'button',
   props:{
     icon:String,
+    loading:{
+      type:Boolean,
+      default:false,
+    },
     size:{
       type:String,
-      default:'normal'
-    }	//尺寸	String	small, normal, large
+      default:'normal', //尺寸	String	small, normal, large
+      // validator(value){
+      //    console.log(value)
+      // }
+    }	
   },
   data() {
     return {}
