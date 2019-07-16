@@ -8,7 +8,13 @@
 <script>
 export default {
   name: 'button',
-  props:['icon'],
+  props:{
+    icon:String,
+    size:{
+      type:String,
+      default:'normal'
+    }	//尺寸	String	small, normal, large
+  },
   data() {
     return {}
   },
