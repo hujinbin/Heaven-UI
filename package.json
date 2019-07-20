@@ -1,6 +1,6 @@
 {
   "name": "heaven-ui",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "这是一个vue的UI框架",
   "main": "index.js",
   "scripts": {
