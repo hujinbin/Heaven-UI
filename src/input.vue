@@ -1,13 +1,23 @@
 <template>
-    <span class="h-input">
-    </span>
+    <div class="h-input">
+      <input type="text" disabled:disabled/>
+      <template v-if="error">
+         <span class="error-text">{{error}}</span>
+      </template>
+    </div>
 </template>
 
 <script>
 export default {
-  name: 'icon',
+  name: 'input',
   props:{
-    name:String,
+    disabled:{
+      type:boolean,
+      default:false,
+    },
+    error:{
+      type:String,
+    }
   },
   data() {
     return {}
@@ -17,5 +27,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.h-input{
+  display: inline-block;
+  >input{
+    height: 32px;
+  }
+  .error-text{
+    color: red;
+  }
+}
 </style>
