@@ -1,6 +1,10 @@
 <template>
     <div class="h-input">
-      <input type="text" disabled:disabled/>
+      <input type="text" disabled:disabled
+      :value=value
+      @change="$emit('change',$event.target.value)"
+      @input="$emit('input',$event.target.value)"
+      />
       <template v-if="error">
          <span class="error-text">{{error}}</span>
       </template>
@@ -11,6 +15,9 @@
 export default {
   name: 'input',
   props:{
+    value:{
+      type:String,
+    },
     disabled:{
       type:boolean,
       default:false,
