@@ -10,18 +10,19 @@
 export default {
   name: 'button',
   props:{
-    icon:String,
-    loading:{
+    icon:String, //图标
+    loading:{ // 加载状态
       type:Boolean,
       default:false,
     },
-    size:{
+    size:{  // 按钮大小
       type:String,
       default:'normal', //尺寸	String	small, normal, large
-      // validator(value){
-      //    console.log(value)
-      // }
-    }	
+    },	
+    type:{
+      type:String,
+      default:'primary'
+    },
   },
   data() {
     return {}
@@ -31,5 +32,19 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+ .h-button{
+    display: inline-block;
+    height: 38px;
+    line-height: 38px;
+    padding: 0 18px;
+    border: 1px solid #C9C9C9;
+    background-color: #fff;
+    color: #555;
+    white-space: nowrap;
+    text-align: center;
+    font-size: 14px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+ }
 </style>
