@@ -1,5 +1,5 @@
 <template>
-    <button class="h-button" @click="$emit(click)">
+    <button class="h-button" :class="`h-button-${type}`" @click="$emit(click)">
       <h-icon v-if="icon && !loading" :name="icon"><h-icon>
          <h-icon v-if="loading" name="loading"><h-icon>
       <slot></slot>
@@ -21,7 +21,7 @@ export default {
     },	
     type:{
       type:String,
-      default:'primary'
+      default:'primary' //颜色 primary / success / warning / danger / info 
     },
   },
   data() {
@@ -47,4 +47,19 @@ export default {
     border-radius: 2px;
     cursor: pointer;
  }
+  .h-button-primary{
+    background: #0c80f9;
+  }
+  .h-button-success{
+    background: #61d826;
+  }
+  .h-button-warning{
+    background: #FFB800;
+  }
+  .h-button-danger{
+    background: #f13535;
+  }
+  .h-button-info{
+    background: #78797d;
+  }
 </style>
