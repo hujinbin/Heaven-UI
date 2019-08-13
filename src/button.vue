@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  name: 'button',
+  name: 'h-button',
   props:{
     icon:String, //图标
     loading:{ // 加载状态

@@ -1,12 +1,16 @@
 <template>
-    <i class="h-icon" :class="`h-icon-${name}`"></i>
+    <i class="h-icon" :class="`h-icon-${name}`" :style="{fontSize:size}"></i>
 </template>
 
 <script>
 export default {
-  name: 'icon',
+  name: 'h-icon',
   props:{
     name:String,
+    size:{
+      type:Number,
+      default:14,
+    }
   },
   data() {
     return {}
