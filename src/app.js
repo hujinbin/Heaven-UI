@@ -1,8 +1,8 @@
-import Vue from 'vue'
-import Button from './button'
-import Icon from './icon'
-import ButtonGroup from './button-group'
-import Input from './input'
+import Vue from '../node_modules/vue'
+import Button from './components/button'
+import Icon from './components/icon'
+import ButtonGroup from './components/button-group'
+import Input from './components/input'
 
 Vue.component('h-button',Button)
 Vue.component('h-icon',Icon)

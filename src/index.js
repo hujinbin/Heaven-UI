@@ -1,8 +1,7 @@
-import Button from './src/button'
-import Icon from './src/icon'
-import ButtonGroup from './src/button-group'
-import Input from './input'
-
+import Button from './components/button'
+import Icon from './components/icon'
+import ButtonGroup from './components/button-group'
+import Input from './components/input'
 
 const install = Vue => {
     Vue.component(Button.name, Button)
