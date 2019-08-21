@@ -1,14 +1,14 @@
 <template>
-    <button class="h-button" :class="`h-button-${type} h-button-${size}`" @click="$emit(click)">
-      <h-icon v-if="icon && !loading" :name="icon"><h-icon>
-         <h-icon v-if="loading" name="loading"><h-icon>
+    <button class="h-button" :class="`h-button-${type} h-button-${size}`" @click="$emit('click')">
+      <h-icon v-if="icon && !loading" :name="icon"></h-icon>
+         <h-icon v-if="loading" name="loading"></h-icon>
       <slot></slot>
     </button>
 </template>
 
 <script>
 export default {
-  name: 'h-button',
+  name: 'HButton',
   props:{
     icon:String, //图标
     loading:{ // 加载状态

@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'h-button-group',
+  name: 'HButtonGroup',
   props:{
   },
   data() {

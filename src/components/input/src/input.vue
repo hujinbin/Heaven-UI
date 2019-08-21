@@ -13,13 +13,13 @@
 
 <script>
 export default {
-  name: 'h-input',
+  name: 'HInput',
   props:{
     value:{
       type:String,
     },
     disabled:{
-      type:boolean,
+      type:Boolean,
       default:false,
     },
     error:{

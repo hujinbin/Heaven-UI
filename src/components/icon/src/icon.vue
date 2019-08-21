@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  name: 'h-icon',
+  name: 'HIcon',
   props:{
     name:String,
     size:{
@@ -20,7 +20,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  @import '//at.alicdn.com/t/font_1343551_0qtdnpb2xpoi.css'; 
+  @import '//at.alicdn.com/t/font_1343551_0vtaqdeweopn.css'; 
   .h-icon{
     font-style: normal;
   }
