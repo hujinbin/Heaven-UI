@@ -1,7 +1,7 @@
 <template>
     <button class="h-button" :class="`h-button-${type} h-button-${size}`" @click="$emit(click)">
-      <h-icon v-if="icon && !loading" :name="icon"><h-icon>
-         <h-icon v-if="loading" name="loading"><h-icon>
+      <h-icon v-if="icon && !loading" :name="icon"></h-icon>
+         <h-icon v-if="loading" name="loading"></h-icon>
       <slot></slot>
     </button>
 </template>
