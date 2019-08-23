@@ -21,7 +21,7 @@ export default {
     },	
     type:{
       type:String,
-      default:'primary' //颜色 primary / success / warning / danger / info 
+      default:'default' //颜色 default默认 primary / success / warning / danger / info 
     },
   },
   data() {
@@ -43,26 +43,39 @@ export default {
     white-space: nowrap;
     text-align: center;
     font-size: 14px;
-    border: none;
     border-radius: 2px;
     cursor: pointer;
+    &:hover,.active{
+      opacity: 0.9;
+      outline: none;
+    }
  }
 
 //  颜色
   .h-button-primary{
     background: #0c80f9;
+    color: #ffffff;
+    border: 1px solid #0c80f9;
   }
   .h-button-success{
     background: #61d826;
+    color: #ffffff;
+    border: 1px solid #61d826;
   }
   .h-button-warning{
     background: #FFB800;
+    color: #ffffff;
+    border: 1px solid #FFB800;
   }
   .h-button-danger{
     background: #f13535;
+    color: #ffffff;
+    border: 1px solid #f13535;
   }
   .h-button-info{
     background: #78797d;
+    color: #ffffff;
+    border: 1px solid #78797d;
   }
   // 大小
   .h-button-large{
