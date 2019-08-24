@@ -4,7 +4,8 @@
     <h-icon name="loading"></h-icon>
     按钮测试
       <h-button @click="add">默认</h-button>
-       <h-button type="success">默认</h-button>
+      <h-button type="success">默认</h-button>
+      <h-button type="success" size="mini">小号</h-button>
   </div>
 </template>
 

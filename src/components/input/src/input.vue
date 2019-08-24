@@ -15,6 +15,10 @@
 export default {
   name: 'HInput',
   props:{
+    type:{
+      type:String,
+      default:'text',
+    },
     value:{
       type:String,
     },

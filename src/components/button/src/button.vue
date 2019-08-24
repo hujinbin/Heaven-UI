@@ -81,6 +81,7 @@ export default {
   .h-button-large{
     height: 44px;
     line-height: 44px;
+     font-size: 16px;
   }
   // .h-button-normal{
   //   height: 38px;
@@ -89,9 +90,11 @@ export default {
   .h-button-small{
     height: 32px;
     line-height: 32px;
+    font-size: 12px;
   }
   .h-button-mini{
       height: 24px;
     line-height: 24px;
+     font-size: 10px;
   }
 </style>
