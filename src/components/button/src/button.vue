@@ -1,5 +1,5 @@
 <template>
-    <button class="h-button" :class="`h-button-${type} h-button-${size}`" @click="$emit('click')">
+    <button class="h-button" :class="`h-button-${type} h-button-${size}`" @click="$emit('click')" :disabled="disabled">
       <h-icon v-if="icon && !loading" :name="icon"></h-icon>
          <h-icon v-if="loading" name="loading"></h-icon>
       <slot></slot>
@@ -23,6 +23,10 @@ export default {
       type:String,
       default:'default' //颜色 default默认 primary / success / warning / danger / info 
     },
+    disabled:{
+      type:Boolean,
+      default:false
+    }
   },
   data() {
     return {}

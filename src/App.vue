@@ -6,12 +6,21 @@
       <h-button @click="add">默认</h-button>
       <h-button type="success">默认</h-button>
       <h-button type="success" size="mini">小号</h-button>
+
+      输入框
+      <h-input v-model="value"></h-input>
+      {{value}}
   </div>
 </template>
 
 <script>
 export default {
   name: 'App',
+  data(){
+    return{
+      value:''
+    }
+  },
   methods:{
     add(){
       console.log(1111)

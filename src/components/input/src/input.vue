@@ -1,7 +1,7 @@
 <template>
     <div class="h-input">
       <input type="text" disabled:disabled
-      :value=value
+      :value='value'
       @change="$emit('change',$event.target.value)"
       @input="$emit('input',$event.target.value)"
       />
