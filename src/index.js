@@ -1,3 +1,4 @@
+import Alert from './components/alert/index'
 import Button from './components/button/index'
 import Icon from './components/icon/index'
 import ButtonGroup from './components/button-group/index'
@@ -8,6 +9,8 @@ const install = Vue => {
     Vue.component(Icon.name, Icon)
     Vue.component(ButtonGroup.name, ButtonGroup)
     Vue.component(Input.name, Input)
+
+    Vue.prototype.$alert = Alert;
 }
 export default install
 
