@@ -1,17 +1,16 @@
 <template>
     <transition name="fade">
-      <div class="shade">
-        <div class="h-alert">
-          <div class="h-alert-header"></div>
-          <div class="pop">{{text}}</div>
+        <div class="shade">
+            <div class="h-alert-msg">
+                <slot></slot>
+            </div>
         </div>
-      </div>
   </transition>
 </template>
 
 <script>
 export default {
-  name: 'HAlert',
+  name: 'HAlertMsg',
   props:{
     text:{
       type:String
@@ -26,6 +25,8 @@ export default {
 
 <style lang="scss" scoped>
    .h-alert{
-     
+     display: inline-block;
+     background: rgba(0,0,0,0.5);
+     color: #ffffff;
    }
 </style>

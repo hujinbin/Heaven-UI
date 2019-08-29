@@ -21,6 +21,10 @@ export default {
       value:''
     }
   },
+  mounted(){
+    this.$alert('测试')
+    this.$alert.msg('测试')
+  },
   methods:{
     add(){
       console.log(1111)
