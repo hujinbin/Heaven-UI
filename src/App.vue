@@ -3,13 +3,19 @@
     icon 测试
     <h-icon name="loading"></h-icon>
     按钮测试
-      <h-button @click="add">默认</h-button>
-      <h-button type="success">默认</h-button>
-      <h-button type="success" size="mini">小号</h-button>
+      <h-button>默认</h-button>
+      <h-button type="primary">简约</h-button>
+      <h-button type="success">成功</h-button>
+      <h-button type="warning" size="mini">警告</h-button>
 
       输入框
       <h-input v-model="value"></h-input>
       {{value}}
+     
+
+      弹窗
+       <h-button type="danger" @click="showAlert">打开弹窗</h-button>
+       <h-button type="info" @click="showMsgAlert">打开消息弹窗</h-button>
   </div>
 </template>
 
@@ -21,14 +27,16 @@ export default {
       value:''
     }
   },
-  mounted(){
-    this.$alert('测试')
-    this.$alert.msg('测试')
-  },
   methods:{
     add(){
       console.log(1111)
-    }
+    },
+    showAlert(){
+      this.$alert('提示')
+    },
+    showMsgAlert(){
+      this.$alert.Msg('提示')
+    },
   }
 }
 </script>
