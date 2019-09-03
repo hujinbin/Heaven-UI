@@ -35,8 +35,9 @@ export default {
     .h-alert{
       background: #ffffff;
       position: fixed;
-      width: 500px;
-      height: 400px;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
       padding: 10px 20px;
     }
    }

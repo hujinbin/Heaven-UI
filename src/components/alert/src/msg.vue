@@ -37,8 +37,9 @@ export default {
      display: inline-block;
      background: rgba(0,0,0,0.5);
      color: #ffffff;
-     left: 10px;
-     top: 4px;
+     left: 50%;
+     top: 50%;
+     transform: translate(-50%, -50%);
      padding: 4px 10px;
    }
 }
