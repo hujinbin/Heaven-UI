@@ -2,22 +2,22 @@ import Vue from 'vue';
 import alert from './alert.vue';
 import msg from './msg.vue';
 
-
+let alertComponent = null
+ 
 const Alert = function(options) {
     const Alert=Vue.extend(alert)
-    const alertComponent = new Alert({
+    alertComponent = new Alert({
         text: options
     });
     // 把alert加入body中
     alertComponent.$mount();
-    console.log(alertComponent)
-    console.log(alertComponent.$el)
     document.body.appendChild(alertComponent.$el);
-    setTimeout(()=>{
-        document.body.removeChild(alertComponent.$el)
-    },2000)
 }
-
+// 关闭弹窗
+Alert.close=function(){
+    document.body.removeChild(alertComponent.$el);
+}
+// 消息
 Alert.Msg = function(options){
     console.log(options)
     const Msg=Vue.extend(msg)

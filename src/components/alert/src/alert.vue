@@ -1,9 +1,10 @@
 <template>
     <transition name="fade">
-      <div class="h-shade">
+      <div class="h-shade" @click.self="close">
         <div class="h-alert">
-          <div class="h-alert-header"></div>
-          <div class="pop">{{text}}</div>
+          <div class="h-alert-header">提示</div>
+          <div class="h-alert-body">{{text}}</div>
+          <div class="h-alert-footer"></div>
         </div>
       </div>
   </transition>
@@ -20,7 +21,24 @@ export default {
   data() {
     return {}
   },
-  methods: {},
+   mounted() {
+      document.addEventListener('keydown', this.keydown);
+    },
+    beforeDestroy() {
+      document.removeEventListener('keydown', this.keydown);
+    },
+  methods: {
+    // esc关闭消息
+    keydown(e){
+       if (e.keyCode === 27) { 
+        this.close()
+       }
+    },
+    // 关闭弹窗
+    close(){
+      this.$el.parentNode.removeChild(this.$el);
+    }
+  },
 }
 </script>
 
@@ -37,8 +55,17 @@ export default {
       position: fixed;
       left: 50%;
       top: 50%;
+      border-radius: 2px;
       transform: translate(-50%, -50%);
-      padding: 10px 20px;
+      padding: 20px;
+      min-width: 200px;
+      .h-alert-header{
+         height: 30px;
+         line-height: 30px;
+      }
+      .h-alert-body{
+          padding: 20px 0;
+      }
     }
    }
 </style>
