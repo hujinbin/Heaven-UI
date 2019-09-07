@@ -20,7 +20,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  @import '//at.alicdn.com/t/font_1343551_0vtaqdeweopn.css'; 
+  @import '//at.alicdn.com/t/font_1343551_3a6syt4l2tr.css'; 
   .h-icon{
     font-style: normal;
   }

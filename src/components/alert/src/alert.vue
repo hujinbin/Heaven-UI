@@ -2,17 +2,28 @@
     <transition name="fade">
       <div class="h-shade" @click.self="close">
         <div class="h-alert">
-          <div class="h-alert-header">提示</div>
+          <div class="h-alert-header">
+            提示
+            <h-icon name="close" @click="close"></h-icon>
+          </div>
           <div class="h-alert-body">{{text}}</div>
-          <div class="h-alert-footer"></div>
+          <div class="h-alert-footer">
+            <h-button type="primary" @click="close">确定</h-button>
+          </div>
         </div>
       </div>
   </transition>
 </template>
 
 <script>
+import HButton from '../../button'
+import HIcon from '../../icon'
 export default {
   name: 'HAlert',
+  components:{
+     HButton,
+     HIcon,
+  },
   props:{
     text:{
       type:String
@@ -22,6 +33,8 @@ export default {
     return {}
   },
    mounted() {
+     console.log(this)
+     console.log(this.text)
       document.addEventListener('keydown', this.keydown);
     },
     beforeDestroy() {
@@ -57,14 +70,16 @@ export default {
       top: 50%;
       border-radius: 2px;
       transform: translate(-50%, -50%);
-      padding: 20px;
+      padding: 15px;
       min-width: 200px;
       .h-alert-header{
-         height: 30px;
-         line-height: 30px;
+        
       }
       .h-alert-body{
-          padding: 20px 0;
+        padding: 20px 0;
+      }
+      .h-alert-footer{
+        text-align: right;
       }
     }
    }

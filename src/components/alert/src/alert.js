@@ -6,9 +6,16 @@ let alertComponent = null
  
 const Alert = function(options) {
     const Alert=Vue.extend(alert)
-    alertComponent = new Alert({
+    options = options || {};
+    if (typeof options === 'string') {
+      options = {
         text: options
+      };
+    }
+    alertComponent = new Alert({
+        propsData: options
     });
+    console.log(options)
     // 把alert加入body中
     alertComponent.$mount();
     document.body.appendChild(alertComponent.$el);
@@ -19,13 +26,16 @@ Alert.close=function(){
 }
 // 消息
 Alert.Msg = function(options){
-    console.log(options)
     const Msg=Vue.extend(msg)
+    if (typeof options === 'string') {
+        options = {
+          text: options
+        };
+      }
     const MsgComponent = new Msg({
-        text: options
+        propsData: options
     });
     MsgComponent.$mount();
-    console.log(MsgComponent.$el)
     document.body.appendChild(MsgComponent.$el);
     setTimeout(()=>{
         document.body.removeChild(MsgComponent.$el)

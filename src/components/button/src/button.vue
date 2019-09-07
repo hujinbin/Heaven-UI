@@ -7,8 +7,12 @@
 </template>
 
 <script>
+import HIcon from '../../icon'
 export default {
   name: 'HButton',
+  components:{
+    HIcon
+  },
   props:{
     icon:String, //图标
     loading:{ // 加载状态
