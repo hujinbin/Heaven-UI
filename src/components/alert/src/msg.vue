@@ -2,18 +2,27 @@
     <transition name="fade">
         <div class="h-shade">
           <div class="h-alert-msg">
-            {{text}}
+             <h-icon name="loading" v-if="loading"></h-icon>
+             <template v-else>{{text}}</template>
           </div>
         </div>
   </transition>
 </template>
 
 <script>
+import HIcon from '../../icon'
 export default {
   name: 'HAlertMsg',
+   components:{
+     HIcon,
+  },
   props:{
     text:{
       type:String
+    },
+    loading:{
+      type:Boolean,
+      default:false,
     }
   },
   data() {
