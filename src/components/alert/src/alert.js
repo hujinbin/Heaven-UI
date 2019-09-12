@@ -42,4 +42,19 @@ Alert.Msg = function(options){
     },2000)
 }
 
+Alert.Loading = function(options){
+  const Msg=Vue.extend(msg)
+  options = {
+    loading: true
+  };
+  const MsgComponent = new Msg({
+      propsData: options
+  });
+  MsgComponent.$mount();
+  document.body.appendChild(MsgComponent.$el);
+  setTimeout(()=>{
+      document.body.removeChild(MsgComponent.$el)
+  },2000)
+}
+
 export default Alert;
