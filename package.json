@@ -24,6 +24,8 @@
   },
   "homepage": "https://github.com/hujinbin/Heaven-UI#readme",
   "dependencies": {
+    "g": "^2.0.1",
+    "karma-cli": "^2.0.0",
     "vue": "^2.5.2"
   },
   "devDependencies": {
@@ -43,7 +45,7 @@
     "file-loader": "^1.1.4",
     "friendly-errors-webpack-plugin": "^1.6.1",
     "html-webpack-plugin": "^2.30.1",
-    "karma": "^0.12.36",
+    "karma": "^0.13.36",
     "karma-chrome-launcher": "^0.2.0",
     "karma-html-reporter": "^0.2.6",
     "karma-jasmine": "^0.3.6",
