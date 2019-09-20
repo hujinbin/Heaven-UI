@@ -2,7 +2,10 @@
     <transition name="fade">
         <div class="h-shade">
           <div class="h-alert-msg">
-             <h-icon name="loading" v-if="loading"></h-icon>
+            <template v-if="loading">
+               <h-icon name="loading" ></h-icon>
+               <div>加载数据中...</div>
+            </template>
              <template v-else>{{text}}</template>
           </div>
         </div>
