@@ -1,10 +1,14 @@
 <template>
     <div class="h-input">
-      <input type="text" disabled:disabled
-      :value='value'
-      @change="$emit('change',$event.target.value)"
-      @input="$emit('input',$event.target.value)"
+      <textarea v-if="type === 'textarea'">
+      </textarea>
+      <template v-else>
+      <input :type="type" disabled:disabled
+        :value='value'
+        @change="$emit('change',$event.target.value)"
+        @input="$emit('input',$event.target.value)"
       />
+      </template>
       <template v-if="error">
          <span class="error-text">{{error}}</span>
       </template>
@@ -17,7 +21,7 @@ export default {
   props:{
     type:{
       type:String,
-      default:'text',
+      default:'text', // Number textarea
     },
     value:{
       type:String,
