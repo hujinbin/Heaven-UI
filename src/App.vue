@@ -9,15 +9,15 @@
       <h-button type="warning" size="mini">警告</h-button>
       <h-button type="danger" loading>加载按钮</h-button>
       <h-button type="primary" icon="edit"></h-button>
-      输入框
-      <h-input v-model="value"></h-input>
-      {{value}}
-     
 
       弹窗
        <h-button type="danger" @click="showAlert">打开弹窗</h-button>
        <h-button type="info" @click="showMsgAlert">打开消息弹窗</h-button>
       <h-button type="info" @click="showLoading">打开加载</h-button>
+          <br/>
+        输入框
+      <h-input v-model="value"></h-input>
+      {{value}}
   </div>
 </template>
 

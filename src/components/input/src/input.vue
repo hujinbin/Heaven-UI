@@ -48,19 +48,19 @@ export default {
   width: 100%;
   >input{
     background: #fff;
-    border-radius: 4px;
+    border-radius: 2px;
     border: 1px solid #dcdfe6;
     box-sizing: border-box;
     color: #78797d;
     display: inline-block;
     font-size: inherit;
-    height: 32px;
-    line-height: 32px;
+    height: 40px;
+    line-height: 40px;
     outline: none;
-    padding: 0 15px;
+    padding: 0 10px;
     width: 100%;
     &:focus{
-
+      border: 1px solid #78797d;
     }
   }
   .error-text{
