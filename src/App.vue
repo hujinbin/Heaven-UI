@@ -18,6 +18,7 @@
         输入框
       <h-input v-model="value"></h-input>
       {{value}}
+      <h-input type="textarea" v-model="value"></h-input>
   </div>
 </template>
 
@@ -26,7 +27,7 @@ export default {
   name: 'App',
   data(){
     return{
-      value:''
+      value:'',
     }
   },
   methods:{

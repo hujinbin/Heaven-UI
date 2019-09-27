@@ -1,10 +1,14 @@
 <template>
     <div class="h-input">
-      <textarea v-if="type === 'textarea'">
+      <textarea v-if="type === 'textarea'"
+      :value='value'
+      :placeholder="placeholder"
+      @input="$emit('input',$event.target.value)">
       </textarea>
       <template v-else>
       <input :type="type" disabled:disabled
         :value='value'
+        :placeholder="placeholder"
         @change="$emit('change',$event.target.value)"
         @input="$emit('input',$event.target.value)"
       />
@@ -30,6 +34,7 @@ export default {
       type:Boolean,
       default:false,
     },
+    placeholder: String,
     error:{
       type:String,
     }
