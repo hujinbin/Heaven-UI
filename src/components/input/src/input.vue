@@ -55,11 +55,13 @@ export default {
     display: inline-block;
     font-size: inherit;
     height: 32px;
-    line-height: 40px;
+    line-height: 32px;
     outline: none;
     padding: 0 15px;
-    transition: border-color .2s cubic-bezier(.645,.045,.355,1);
     width: 100%;
+    &:focus{
+
+    }
   }
   .error-text{
     color: red;
