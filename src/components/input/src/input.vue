@@ -25,12 +25,16 @@ export default {
   props:{
     type:{
       type:String,
-      default:'text', // Number textarea
+      default:'text', // 类型 Number textarea 
     },
     value:{
-      type:String,
+      type:String | Number, //绑定值
     },
-    disabled:{
+    disabled:{ 
+      type:Boolean,
+      default:false,
+    },
+    readonly:{ 
       type:Boolean,
       default:false,
     },
@@ -67,6 +71,18 @@ export default {
     &:focus{
       border: 1px solid #78797d;
     }
+  }
+  >textarea{
+    background: #fff;
+    border-radius: 2px;
+    border: 1px solid #dcdfe6;
+    box-sizing: border-box;
+    color: #78797d;
+    display: inline-block;
+    font-size: inherit;
+    min-height: 40px;
+    line-height: 40px;
+    padding: 10px;
   }
   .error-text{
     color: red;
