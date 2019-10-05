@@ -13,7 +13,7 @@
     "test": "cross-env BABEL_ENV=test karma start test/karma.conf.js --single-run",
     "parcel-dev": "parcel parcel.index.html --no-cache",
     "parcel-build": "parcel build parcel.index.html --no-cache",
-    "parcel-test": "parcel build test/* --no-cache --no-minify & karma start --single-run"
+    "parcel-test": "parcel build test/parcel-specs* --no-cache --no-minify & karma start --single-run"
   },
   "repository": {
     "type": "git",

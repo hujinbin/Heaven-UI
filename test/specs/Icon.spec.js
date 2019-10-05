@@ -1,11 +1,30 @@
 import Vue from 'vue'
 import Icon from '@/components/icon'
 
-describe('icom.vue', () => {
+describe('icon.vue', () => {
+  it('icon是否存在',()=>{
+    expect(Button).to.be.ok;
+  })
   it('测试name是否生效', () => {
     const Constructor = Vue.extend(Icon)
-    const vm = new Constructor().$mount()
-    expect(vm.$el.querySelector('.hello h1').textContent)
-      .to.equal('Welcome to Your Vue.js App')
+    const vm = new Constructor({
+      propsData:{
+        name:'loading'
+      }
+    }).$mount()
+    expect(vm.$el.querySelector('.h-icon').getAttribute('class'))
+      .to.equal('h-icon-loading')
+      vm.$destroy()
+  })
+  it('测试size是否生效', () => {
+    const Constructor = Vue.extend(Icon)
+    const vm = new Constructor({
+      propsData:{
+        size:20
+      }
+    }).$mount()
+    expect(vm.$el.querySelector('.h-icon').textContent)
+      .to.equal('')
+      vm.$destroy()
   })
 })
