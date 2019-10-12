@@ -19,6 +19,9 @@
       <h-input v-model="value"></h-input>
       {{value}}
       <h-input type="textarea" v-model="value"></h-input>
+      单选框
+      <h-radio>男</h-radio>
+      <h-radio>女</h-radio>
   </div>
 </template>
 
