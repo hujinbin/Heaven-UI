@@ -20,8 +20,8 @@
       {{value}}
       <h-input type="textarea" v-model="value"></h-input>
       单选框
-      <h-radio>男</h-radio>
-      <h-radio>女</h-radio>
+      <h-radio :label='1' v-model="value">男</h-radio>
+      <h-radio :label='2' v-model="value">女</h-radio>
   </div>
 </template>
 

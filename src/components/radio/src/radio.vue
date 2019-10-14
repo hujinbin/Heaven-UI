@@ -1,5 +1,5 @@
 <template>
-   <label class="h-radio checked">
+   <label class="h-radio" :class="{checked:value === label}">
         <span class="h-radio-input">
            <span class="h-radio-inner"></span>
            <input type="radio" class="h-radio-original" :value="value" @change="$emit('change',$event.target.value)">
@@ -14,7 +14,12 @@
 export default {
  name: 'h-radio',
   props:{
-    value: Number || String,
+    label: {
+       type:Number || String,
+    },
+    value: {
+       type: Number || String,
+    }
   },
 }
 </script>
