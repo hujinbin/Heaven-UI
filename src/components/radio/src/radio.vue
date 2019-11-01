@@ -1,8 +1,16 @@
 <template>
-   <label class="h-radio" :class="{checked:value === label}">
+   <label class="h-radio" 
+     :class="[
+      { 'disabled': disabled },
+      { 'checked':value === label}
+    ]">
         <span class="h-radio-input">
            <span class="h-radio-inner"></span>
-           <input type="radio" class="h-radio-original" :value="value" @change="$emit('change',$event.target.value)">
+           <input type="radio"
+           class="h-radio-original"
+           :value="label"
+           @change="handleChange($event)"
+           >
         </span>
        <span class="h-radio-label">
            <slot></slot>
@@ -14,13 +22,33 @@
 export default {
  name: 'h-radio',
   props:{
-    label: {
-       type:Number || String,
+    label: '',
+    value: '',
+     disabled:{ 
+      type:Boolean,
+      default:false,
     },
-    value: {
-       type: Number || String,
-    }
   },
+   // computed: {
+   //     model: {
+   //      get() {
+   //        return this.value;
+   //      },
+   //      set(val) {
+   //         console.log(val)
+   //       this.$emit('input', val);
+   //      }
+   //    },
+   // },
+    methods: {
+      handleChange($event) {
+         console.log($event.target.value)
+        this.$nextTick(() => {
+           this.$emit('change',$event.target.value)
+         //  this.$emit('change', this.model);
+        });
+      }
+    }
 }
 </script>
 
@@ -71,17 +99,23 @@ export default {
           border-color: #0c80f9;
           &::after{
             content: "";
-             width: 4px;
+            width: 4px;
             height: 4px;
             border-radius: 100%;
-               background-color: #fff;
-         position: absolute;
-         display: block;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
-    transition: transform .15s ease-in;
+            background-color: #fff;
+            position: absolute;
+            display: block;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            transition: transform .15s ease-in;
           }
+       }
+    }
+    &.disabled{
+       .h-radio-inner{
+          background: #78797d;
+          border-color: #78797d;
        }
     }
 }

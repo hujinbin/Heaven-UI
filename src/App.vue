@@ -20,8 +20,10 @@
       {{value}}
       <h-input type="textarea" v-model="value"></h-input>
       单选框
-      <h-radio :label='1' v-model="value">男</h-radio>
-      <h-radio :label='2' v-model="value">女</h-radio>
+      <h-radio :label='1' v-model="radioValue">男</h-radio>
+      <h-radio :label='2' v-model="radioValue">女</h-radio>
+      <h-radio :label='1' v-model="radioValue" disabled>男</h-radio>
+      <h-radio :label='2' v-model="radioValue" disabled>女</h-radio>
   </div>
 </template>
 
@@ -31,6 +33,7 @@ export default {
   data(){
     return{
       value:'',
+      radioValue: 1,
     }
   },
   methods:{
