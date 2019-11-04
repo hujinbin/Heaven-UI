@@ -28,6 +28,10 @@ export default {
       type:Boolean,
       default:false,
     },
+    name:'',
+    size:{ 
+      type:Number,
+    },
   },
    // computed: {
    //     model: {
