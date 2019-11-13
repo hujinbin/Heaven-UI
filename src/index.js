@@ -4,6 +4,7 @@ import Icon from './components/icon/index'
 import ButtonGroup from './components/button-group/index'
 import Input from './components/input/index'
 import Radio from './components/radio/index'
+import Checkbox from './components/checkbox/index'
 
 const install = Vue => {
     Vue.component(Button.name, Button)
@@ -11,6 +12,7 @@ const install = Vue => {
     Vue.component(ButtonGroup.name, ButtonGroup)
     Vue.component(Input.name, Input)
     Vue.component(Radio.name, Radio)
+    Vue.component(Checkbox.name, Checkbox)
 
     Vue.prototype.$alert = Alert;
 }
