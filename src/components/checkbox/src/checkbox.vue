@@ -15,6 +15,15 @@ export default {
  name: 'h-checkbox',
   props:{
     value: Number || String,
+     label: '',
+     disabled:{ 
+      type:Boolean,
+      default:false,
+    },
+    name:'',
+    size:{ 
+      type:Number,
+    },
   },
 }
 </script>
