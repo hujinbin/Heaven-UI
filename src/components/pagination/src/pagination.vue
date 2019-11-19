@@ -1,10 +1,10 @@
 <template>
    <ul class="h-pagination">
-      <h-icon name="ios-arrow-left"></h-icon>
+      <h-icon name="ios-arrow-left" @click="prev"></h-icon>
       <li 
          :class="{ active: currentPage === 1, disabled }">
          </li>
-      <h-icon name="ios-arrow-right"></h-icon>
+      <h-icon name="ios-arrow-right" @click="next"></h-icon>
    </ul>
 </template>
 
@@ -17,11 +17,8 @@ export default {
   },
   props:{
     currentPage: Number,
-
     pageCount: Number,
-
     pagerCount: Number,
-
     disabled: Boolean,
     size:{ 
       type:Number,  //分页大小
@@ -33,11 +30,11 @@ export default {
     methods: {
       emitChange() {
       this.$nextTick(() => {
-        if (this.internalCurrentPage !== this.lastEmittedPage || this.userChangePageSize) {
-          this.$emit('current-change', this.internalCurrentPage);
-          this.lastEmittedPage = this.internalCurrentPage;
-          this.userChangePageSize = false;
-        }
+        // if (this.internalCurrentPage !== this.lastEmittedPage || this.userChangePageSize) {
+        //   this.$emit('current-change', this.internalCurrentPage);
+        //   this.lastEmittedPage = this.internalCurrentPage;
+        //   this.userChangePageSize = false;
+        // }
       });
     },
    //  上一页
