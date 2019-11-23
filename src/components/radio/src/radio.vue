@@ -20,7 +20,7 @@
 
 <script>
 export default {
- name: 'h-radio',
+ name: 'HRadio',
   props:{
     label: '',
     value: '',

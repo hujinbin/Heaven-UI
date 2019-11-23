@@ -1,18 +1,12 @@
 <template>
-   <label class="h-radio">
-        <span class="h-radio-input">
-           <span class="h-radio-inner"></span>
-           <input type="radio" class="h-radio-original" :value="value" @change="$emit('change',$event.target.value)">
-        </span>
-       <span class="h-radio-label">
-           <slot></slot>
-       </span>
-   </label>
+   <div class="h-radio">
+       
+   </div>
 </template>
 
 <script>
 export default {
- name: 'h-radio',
+ name: 'h-radio-group',
   props:{
     value: Number || String,
   },
@@ -20,7 +14,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.h-radio{
+.h-radio-group{
 
 }
 </style>
