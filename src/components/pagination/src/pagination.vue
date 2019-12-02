@@ -17,16 +17,23 @@ export default {
   },
   props:{
     currentPage: Number,
-    pageCount: Number,
-    pagerCount: Number,
+    total: Number,  //总条数
+    pagerCount: Number, // 数据总数
     disabled: Boolean,
     size:{ 
-      type:Number,  //分页大小
+      type:String,  //分页大小  //small 
     },
   },
   data() {
     return {}
   },
+  computed: {
+    //  页数数组
+      pagerList() {
+        const pagerCount = this.pagerCount;
+        const halfPagerCount = (pagerCount - 1) / 2;
+      }
+    },
     methods: {
       emitChange() {
       this.$nextTick(() => {
