@@ -5,6 +5,7 @@ import ButtonGroup from './components/button-group/index'
 import Input from './components/input/index'
 import Radio from './components/radio/index'
 import Checkbox from './components/checkbox/index'
+import Pagination from './components/pagination/index'
 
 const install = Vue => {
     Vue.component(Button.name, Button)
@@ -13,6 +14,7 @@ const install = Vue => {
     Vue.component(Input.name, Input)
     Vue.component(Radio.name, Radio)
     Vue.component(Checkbox.name, Checkbox)
+    Vue.component(Pagination.name, Pagination)
 
     Vue.prototype.$alert = Alert;
 }

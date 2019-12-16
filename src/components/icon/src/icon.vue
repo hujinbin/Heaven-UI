@@ -1,5 +1,5 @@
 <template>
-    <i class="h-icon" :class="`h-icon-${name}`" :style="{fontSize:size}"></i>
+    <i class="h-icon" :class="`h-icon-${name}`" @click="$emit('click')" :style="{fontSize:size}"></i>
 </template>
 
 <script>

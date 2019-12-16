@@ -4,7 +4,7 @@
         <div class="h-alert">
           <div class="h-alert-header">
             提示
-            <h-icon name="close" @click="close"></h-icon>
+            <h-icon class="close-btn" name="close" @click="close"></h-icon>
           </div>
           <div class="h-alert-body">{{text}}</div>
           <div class="h-alert-footer">
@@ -33,17 +33,15 @@ export default {
     return {}
   },
    mounted() {
-     console.log(this)
-     console.log(this.text)
       document.addEventListener('keydown', this.keydown);
     },
     beforeDestroy() {
       document.removeEventListener('keydown', this.keydown);
     },
   methods: {
-    // esc关闭消息
+    // esc 27 关闭消息 
     keydown(e){
-       if (e.keyCode === 27) { 
+       if (e.keyCode === 27 || e.keyCode === 13) { 
         this.close()
        }
     },
@@ -73,7 +71,10 @@ export default {
       padding: 15px;
       min-width: 200px;
       .h-alert-header{
-        
+        .close-btn{
+          cursor: pointer;
+          float: right;
+        }
       }
       .h-alert-body{
         padding: 20px 0;

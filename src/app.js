@@ -1,4 +1,4 @@
-import Vue from '../node_modules/vue'
+import Vue from 'vue'
 import Button from './components/button'
 import Icon from './components/icon'
 import ButtonGroup from './components/button-group'

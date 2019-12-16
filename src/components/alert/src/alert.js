@@ -15,7 +15,6 @@ const Alert = function(options) {
     alertComponent = new Alert({
         propsData: options
     });
-    console.log(options)
     // 把alert加入body中
     alertComponent.$mount();
     document.body.appendChild(alertComponent.$el);
