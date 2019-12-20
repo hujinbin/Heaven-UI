@@ -40,6 +40,10 @@
       多选框
       <h-checkbox>多选框1</h-checkbox>
       <h-checkbox>多选框2</h-checkbox>
+
+      <br/>
+      分页
+      <h-pagination></h-pagination>
   </div>
 </template>
 

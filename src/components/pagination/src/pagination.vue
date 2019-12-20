@@ -1,4 +1,5 @@
 <template>
+<div>
    <ul class="h-pagination">
       <h-icon name="ios-arrow-left" @click="prev"></h-icon>
       <li 
@@ -6,6 +7,7 @@
          </li>
       <h-icon name="ios-arrow-right" @click="next"></h-icon>
    </ul>
+</div>
 </template>
 
 <script>
@@ -16,9 +18,22 @@ export default {
     HIcon
   },
   props:{
-    currentPage: Number,
-    total: Number,  //总条数
-    pagerCount: Number, // 数据总数
+    currentPage:{
+      default:1,
+      type:Number,
+    }, // 当前页
+    total: {
+      default:1,
+      type:Number,
+    },  //总条数
+    pagerCount: {
+      default:20,
+      type:Number,
+    }, // 数据总数
+    pageSize:{
+      default:20,
+      type:Number,
+    }, //分页码
     disabled: Boolean,
     size:{ 
       type:String,  //分页大小  //small 
@@ -61,4 +76,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.h-pagination{
+
+}
 </style>
