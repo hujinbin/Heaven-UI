@@ -1,56 +1,69 @@
 <template>
-<div>
-   <ul class="h-pagination">
-      <h-icon name="ios-arrow-left" @click="prev"></h-icon>
-      <li 
-         :class="{ active: currentPage === 1, disabled }">
-         </li>
-      <h-icon name="ios-arrow-right" @click="next"></h-icon>
-   </ul>
-</div>
+  <div>
+    <ul class="h-pagination">
+      <li @click="prev">
+        <h-icon name="ios-arrow-left"></h-icon>
+      </li>
+      <li
+        v-for="(page,index) in pagerList"
+        :key="index"
+        :class="{ active: currentPage === 1, disabled }"
+      >{{page}}</li>
+      <li @click="next">
+        <h-icon name="ios-arrow-right"></h-icon>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script>
-import HIcon from '../../icon'
+import HIcon from "../../icon";
 export default {
- name: 'h-pagination',
- components:{
+  name: "h-pagination",
+  components: {
     HIcon
   },
-  props:{
-    currentPage:{
-      default:1,
-      type:Number,
+  props: {
+    currentPage: {
+      default: 1,
+      type: Number
     }, // 当前页
     total: {
-      default:1,
-      type:Number,
-    },  //总条数
+      default: 1,
+      type: Number
+    }, //总条数
     pagerCount: {
-      default:20,
-      type:Number,
+      default: 20,
+      type: Number
     }, // 数据总数
-    pageSize:{
-      default:20,
-      type:Number,
+    pageSize: {
+      default: 20,
+      type: Number
     }, //分页码
     disabled: Boolean,
-    size:{ 
-      type:String,  //分页大小  //small 
-    },
+    size: {
+      type: String //分页大小  //small
+    }
+  },
+  created() {
+    this.internalCurrentPage = this.currentPage;
+    this.internalPageSize = this.pageSize;
   },
   data() {
-    return {}
+    return {
+      internalCurrentPage: 1, //加载默认页
+      internalPageSize: 0
+    };
   },
   computed: {
     //  页数数组
-      pagerList() {
-        const pagerCount = this.pagerCount;
-        const halfPagerCount = (pagerCount - 1) / 2;
-      }
-    },
-    methods: {
-      emitChange() {
+    pagerList() {
+      const pagerCount = this.pagerCount;
+      const halfPagerCount = (pagerCount - 1) / 2;
+    }
+  },
+  methods: {
+    emitChange() {
       this.$nextTick(() => {
         // if (this.internalCurrentPage !== this.lastEmittedPage || this.userChangePageSize) {
         //   this.$emit('current-change', this.internalCurrentPage);
@@ -59,24 +72,25 @@ export default {
         // }
       });
     },
-   //  上一页
-     prev() {
+    //  上一页
+    prev() {
       if (this.disabled) return;
-      const newVal = this.internalCurrentPage - 1;
+      this.internalCurrentPage--;
+      // const newVal = this.internalCurrentPage - 1;
       this.emitChange();
     },
-   //  下一页
+    //  下一页
     next() {
       if (this.disabled) return;
-      const newVal = this.internalCurrentPage + 1;
+      this.internalCurrentPage++;
+      // const newVal = this.internalCurrentPage + 1;
       this.emitChange();
-    },
     }
-}
+  }
+};
 </script>
 
 <style lang="scss" scoped>
-.h-pagination{
-
+.h-pagination {
 }
 </style>
