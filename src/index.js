@@ -1,11 +1,11 @@
-import Alert from './components/alert/index'
-import Button from './components/button/index'
-import Icon from './components/icon/index'
-import ButtonGroup from './components/button-group/index'
-import Input from './components/input/index'
-import Radio from './components/radio/index'
-import Checkbox from './components/checkbox/index'
-import Pagination from './components/pagination/index'
+import Alert from './components/alert/index.js'
+import Button from './components/button/index.js'
+import Icon from './components/icon/index.js'
+import ButtonGroup from './components/button-group/index.js'
+import Input from './components/input/index.js'
+import Radio from './components/radio/index.js'
+import Checkbox from './components/checkbox/index.js'
+import Pagination from './components/pagination/index.js'
 
 const install = Vue => {
     Vue.component(Button.name, Button)
@@ -19,5 +19,3 @@ const install = Vue => {
     Vue.prototype.$alert = Alert;
 }
 export default install
-
-// export {Button,Icon,ButtonGroup,Input}
