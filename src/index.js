@@ -18,4 +18,14 @@ const install = Vue => {
 
     Vue.prototype.$alert = Alert;
 }
-export default install
+export default {
+    install,
+    Alert,
+    Button,
+    Icon,
+    ButtonGroup,
+    Input,
+    Radio,
+    Checkbox,
+    Pagination,
+}
