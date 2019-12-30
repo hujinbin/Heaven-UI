@@ -7,17 +7,32 @@ import Radio from './components/radio/index.js'
 import Checkbox from './components/checkbox/index.js'
 import Pagination from './components/pagination/index.js'
 
-const install = Vue => {
-    Vue.component(Button.name, Button)
-    Vue.component(Icon.name, Icon)
-    Vue.component(ButtonGroup.name, ButtonGroup)
-    Vue.component(Input.name, Input)
-    Vue.component(Radio.name, Radio)
-    Vue.component(Checkbox.name, Checkbox)
-    Vue.component(Pagination.name, Pagination)
 
+
+const components = [
+    Button,
+    Icon,
+    ButtonGroup,
+    Input,
+    Radio,
+    Checkbox,
+    Pagination,
+  ]
+  
+  const install = function(Vue, opts = {}) {
+    components.map(component => {
+      Vue.component(component.name, component);
+    })
     Vue.prototype.$alert = Alert;
+  }
+
+console.log('Heaven0.0.1')
+
+/* 支持使用标签的方式引入 */
+if (typeof window !== 'undefined' && window.Vue) {
+   install(window.Vue);
 }
+
 export default {
     install,
     Alert,
