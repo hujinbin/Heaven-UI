@@ -37,17 +37,23 @@ export default {
   computed: {
     model: {
       get() {
+         console.log('获取')
+        console.log(this.value)
         return this.value;
       },
       set(val) {
+         console.log('设置')
+        console.log(val)
         this.$emit("input", val);
       }
     }
   },
   methods: {
     handleChange($event) {
+       console.log($event.target.name)
+      console.log($event.target.value)
       this.$nextTick(() => {
-        this.$emit("change", $event.target.value);
+        this.$emit("change", $event.target.name);
       });
     }
   }
@@ -115,6 +121,7 @@ export default {
     }
   }
   &.disabled {
+    cursor: not-allowed;
     .h-radio-inner {
       background: #78797d;
       border-color: #78797d;
