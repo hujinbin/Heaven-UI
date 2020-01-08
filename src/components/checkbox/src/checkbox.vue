@@ -1,46 +1,79 @@
 <template>
-   <label class="h-checkbox">
-        <span class="h-checkbox-input">
-           <span class="h-radio-inner"></span>
-           <input type="checkbox" class="h-checkbox-original" :value="value" @change="$emit('change',$event.target.value)">
-        </span>
-       <span class="h-checkbox-label">
-           <slot></slot>
-       </span>
-   </label>
+  <label
+    class="h-checkbox"
+    :class="[
+      { 'disabled': disabled },
+      { 'checked':model === label}
+    ]"
+  >
+    <span class="h-checkbox-input">
+      <span class="h-radio-inner"></span>
+      <input
+        type="checkbox"
+        class="h-checkbox-original"
+        :value="label"
+        v-model="model"
+        @change="$emit('change',$event.target.value)"
+      />
+    </span>
+    <span class="h-checkbox-label">
+      <slot></slot>
+    </span>
+  </label>
 </template>
 
 <script>
 export default {
- name: 'h-checkbox',
-  props:{
+  name: "h-checkbox",
+  props: {
     value: Number || String,
-     label: '',
-     disabled:{ 
-      type:Boolean,
-      default:false,
+    label: Number || String,
+    disabled: {
+      type: Boolean,
+      default: false
     },
-    name:'',
-    size:{ 
-      type:Number,
-    },
+    name: String,
+    size: {
+      type: Number
+    }
   },
-}
+  computed: {
+    // 选中的值
+    model: {
+      get() {
+        return this.value;
+      },
+      set(val) {
+        this.$emit("input", val);
+      }
+    },
+    // 是否选中状态
+    isChecked() {
+        // if ({}.toString.call(this.model) === '[object Boolean]') {
+        //   return this.model;
+        // } else if (Array.isArray(this.model)) {
+        //   return this.model.indexOf(this.label) > -1;
+        // } else if (this.model !== null && this.model !== undefined) {
+        //   return this.model === this.trueLabel;
+        // }
+      },
+  }
+};
 </script>
 
 <style lang="scss" scoped>
-.h-checkbox{
+.h-checkbox {
   cursor: pointer;
-  color: #5E5E66;
-  .h-checkbox-input{
-      white-space: nowrap;
-       cursor: pointer;
-      outline: none;
-      display: inline-block;
-      line-height: 1;
-      position: relative;
-      vertical-align: middle;
-     .h-radio-inner{
+  color: #5e5e66;
+  .h-checkbox-input {
+    white-space: nowrap;
+    cursor: pointer;
+    outline: none;
+    display: inline-block;
+    line-height: 1;
+    position: relative;
+    vertical-align: middle;
+    .h-radio-inner {
       display: inline-block;
       border: 1px solid #dcdfe6;
       border-radius: 2px;
@@ -49,11 +82,37 @@ export default {
       height: 14px;
       background-color: #fff;
       z-index: 1;
-     }
-     .h-checkbox-original{
+    }
+    .h-checkbox-original {
+      position: absolute;
+      opacity: 0;
+    }
+  }
+   &.checked {
+    .h-radio-inner {
+      background: #0c80f9;
+      border-color: #0c80f9;
+      &::after {
+        content: "";
+        width: 4px;
+        height: 4px;
+        border-radius: 100%;
+        background-color: #fff;
         position: absolute;
-        opacity: 0;
-     }
+        display: block;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        transition: transform 0.15s ease-in;
+      }
+    }
+  }
+  &.disabled {
+    cursor: not-allowed;
+    .h-radio-inner {
+      background: #78797d;
+      border-color: #78797d;
+    }
   }
 }
 </style>

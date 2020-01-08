@@ -38,8 +38,8 @@
 
       <br/>
       多选框
-      <h-checkbox>多选框1</h-checkbox>
-      <h-checkbox>多选框2</h-checkbox>
+      <h-checkbox v-model="checkboxValue">多选框1</h-checkbox>
+      <h-checkbox v-model="checkboxValue">多选框2</h-checkbox>
 
       <br/>
       分页
@@ -54,6 +54,7 @@ export default {
     return{
       value:'',
       radioValue: 1,
+      checkboxValue: true,
     }
   },
   methods:{

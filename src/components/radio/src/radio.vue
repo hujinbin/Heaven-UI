@@ -8,10 +8,13 @@
   >
     <span class="h-radio-input">
       <span class="h-radio-inner"></span>
-      <input type="radio" class="h-radio-original"
-      :name="label"
-      v-model="model"
-      @change="handleChange($event)" />
+      <input
+        type="radio"
+        class="h-radio-original"
+        :value="label"
+        v-model="model"
+        @change="handleChange"
+      />
     </span>
     <span class="h-radio-label">
       <slot></slot>
@@ -23,8 +26,8 @@
 export default {
   name: "HRadio",
   props: {
-    label: "",
-    value: "",
+    label: Number | String,
+    value: Number | String,
     disabled: {
       type: Boolean,
       default: false
@@ -37,24 +40,20 @@ export default {
   computed: {
     model: {
       get() {
-         console.log('获取')
-        console.log(this.value)
+        console.log("获取");
+        console.log(this.value);
         return this.value;
       },
       set(val) {
-         console.log('设置')
-        console.log(val)
+        console.log("设置");
+        console.log(val);
         this.$emit("input", val);
       }
     }
   },
   methods: {
     handleChange($event) {
-       console.log($event.target.name)
-      console.log($event.target.value)
-      this.$nextTick(() => {
-        this.$emit("change", $event.target.name);
-      });
+      this.$emit("change", $event.target.value);
     }
   }
 };
@@ -72,7 +71,6 @@ export default {
   margin-right: 20px;
   .h-radio-input {
     white-space: nowrap;
-    cursor: pointer;
     outline: none;
     display: inline-block;
     line-height: 1;
@@ -85,7 +83,6 @@ export default {
       height: 14px;
       background: #fff;
       position: relative;
-      cursor: pointer;
       display: inline-block;
       box-sizing: border-box;
     }
