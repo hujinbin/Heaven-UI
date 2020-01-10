@@ -3,7 +3,7 @@
     class="h-checkbox"
     :class="[
       { 'disabled': disabled },
-      { 'checked':model === label}
+      { 'checked': isChecked}
     ]"
   >
     <span class="h-checkbox-input">
@@ -11,6 +11,7 @@
       <input
         type="checkbox"
         class="h-checkbox-original"
+        :name="name"
         :value="label"
         v-model="model"
         @change="$emit('change',$event.target.value)"
@@ -49,14 +50,8 @@ export default {
     },
     // 是否选中状态
     isChecked() {
-        // if ({}.toString.call(this.model) === '[object Boolean]') {
-        //   return this.model;
-        // } else if (Array.isArray(this.model)) {
-        //   return this.model.indexOf(this.label) > -1;
-        // } else if (this.model !== null && this.model !== undefined) {
-        //   return this.model === this.trueLabel;
-        // }
-      },
+        
+    },
   }
 };
 </script>
