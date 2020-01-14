@@ -26,7 +26,7 @@ const components = [
     Vue.prototype.$alert = Alert;
   }
 
-console.log('Heaven0.0.1')
+console.log('Heaven0.0.2')
 
 /* 支持使用标签的方式引入 */
 if (typeof window !== 'undefined' && window.Vue) {
