@@ -42,21 +42,23 @@ export default {
     // 选中的值
     model: {
       get() {
+        console.log(this.value)
         return this.value;
       },
       set(val) {
+        console.log(val)
         this.$emit("input", val);
       }
     },
     // 是否选中状态
     isChecked() {
-        
+      return this.model
     },
   }
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" type="text/scss" scoped>
 .h-checkbox {
   cursor: pointer;
   color: #5e5e66;
