@@ -27,8 +27,8 @@
 export default {
   name: "h-checkbox",
   props: {
-    value: Number || String,
-    label: Number || String,
+    value: Boolean || Number || String,
+    label: Boolean || Number || String,
     disabled: {
       type: Boolean,
       default: false
@@ -42,11 +42,9 @@ export default {
     // 选中的值
     model: {
       get() {
-        console.log(this.value)
         return this.value;
       },
       set(val) {
-        console.log(val)
         this.$emit("input", val);
       }
     },
@@ -91,16 +89,18 @@ export default {
       border-color: #0c80f9;
       &::after {
         content: "";
-        width: 4px;
-        height: 4px;
-        border-radius: 100%;
-        background-color: #fff;
+        box-sizing: content-box;
+        border: 1px solid #fff;
+        border-left: 0;
+        border-top: 0;
+        height: 7px;
+        left: 5px;
         position: absolute;
-        display: block;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        transition: transform 0.15s ease-in;
+        top: 2px;
+        transform: rotate(45deg) scaleY(1);
+        width: 3px;
+        transition: transform .15s ease-in .05s;
+        transform-origin: center;
       }
     }
   }

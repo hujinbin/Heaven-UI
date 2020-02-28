@@ -90,7 +90,11 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.h-pagination {
-}
+<style lang="scss" type="text/scss" scoped>
+  .h-pagination {
+    li{
+      display: inline-block;
+      border: 1px solid #D7D7DB;
+    }
+  }
 </style>
