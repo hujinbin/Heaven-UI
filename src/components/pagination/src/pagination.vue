@@ -60,6 +60,7 @@ export default {
     pagerList() {
       const pagerCount = this.pagerCount;
       const halfPagerCount = (pagerCount - 1) / 2;
+      return [1,2,3]
     }
   },
   methods: {
@@ -95,6 +96,18 @@ export default {
     li{
       display: inline-block;
       border: 1px solid #D7D7DB;
+      vertical-align: middle;
+      padding: 0 10px;
+      height: 28px;
+      line-height: 28px;
+      background-color: #fff;
+      font-size: 13px;
+      color: #8D8E99;
+      cursor: pointer;
+      .h-icon{
+        font-size: 13px;
+        color: #8D8E99;
+      }
     }
   }
 </style>
