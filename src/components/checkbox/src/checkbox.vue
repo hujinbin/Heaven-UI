@@ -14,7 +14,7 @@
         :name="name"
         :value="label"
         v-model="model"
-        @change="$emit('change',$event.target.value)"
+        @change="valueChange"
       />
     </span>
     <span class="h-checkbox-label">
@@ -45,14 +45,24 @@ export default {
         return this.value;
       },
       set(val) {
-        this.$emit("input", val);
+        if(this.disabled === false){
+          this.$emit("input", val);
+        }
       }
     },
     // 是否选中状态
     isChecked() {
       return this.model
     },
-  }
+  },
+  methods:{
+//    当选框选中事件
+    valueChange($event){
+      if(this.disabled === false){
+        this.$emit('change',$event.target.value)
+      }
+    }
+  },
 };
 </script>
 

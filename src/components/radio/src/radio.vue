@@ -40,20 +40,20 @@ export default {
   computed: {
     model: {
       get() {
-        console.log("获取");
-        console.log(this.value);
         return this.value;
       },
       set(val) {
-        console.log("设置");
-        console.log(val);
-        this.$emit("input", val);
+        if(this.disabled === false){
+          this.$emit("input", val);
+        }
       }
     }
   },
   methods: {
     handleChange($event) {
-      this.$emit("change", $event.target.value);
+      if(this.disabled === false){
+        this.$emit("change", $event.target.value);
+      }
     }
   }
 };
