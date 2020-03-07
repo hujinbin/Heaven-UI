@@ -1,13 +1,14 @@
 <template>
   <div>
-    <ul class="h-pagination">
+    <ul class="h-pagination" :class="{disabled:disabled}">
       <li @click="prev">
         <h-icon name="ios-arrow-left"></h-icon>
       </li>
       <li
         v-for="(page,index) in pagerList"
         :key="index"
-        :class="{ active: currentPage === 1, disabled }"
+        :class="{ active: page === internalCurrentPage }"
+        @click="pageChange(page)"
       >{{page}}</li>
       <li @click="next">
         <h-icon name="ios-arrow-right"></h-icon>
@@ -73,6 +74,9 @@ export default {
         // }
       });
     },
+    pageChange(page){
+      this.internalCurrentPage = page
+    },
     //  上一页
     prev() {
       if (this.disabled) return;
@@ -108,6 +112,11 @@ export default {
         font-size: 13px;
         color: #8D8E99;
       }
+    }
+    .active{
+      background: #0c80f9;
+      border: 1px solid #0c80f9;
+      color: #ffffff;
     }
   }
 </style>
