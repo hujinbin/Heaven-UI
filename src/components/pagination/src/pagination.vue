@@ -1,7 +1,7 @@
 <template>
   <div>
     <ul class="h-pagination" :class="{disabled:disabled}">
-      <li @click="prev">
+      <li :class="{'disabled-button':internalCurrentPage===1}"  @click="prev">
         <h-icon name="ios-arrow-left"></h-icon>
       </li>
       <li
@@ -10,7 +10,7 @@
         :class="{ active: page === internalCurrentPage }"
         @click="pageChange(page)"
       >{{page}}</li>
-      <li @click="next">
+      <li :class="{'disabled-button':internalCurrentPage===total}" @click="next">
         <h-icon name="ios-arrow-right"></h-icon>
       </li>
     </ul>
@@ -79,14 +79,14 @@ export default {
     },
     //  上一页
     prev() {
-      if (this.disabled) return;
+      if (this.disabled || this.internalCurrentPage === 1) return;
       this.internalCurrentPage--;
       // const newVal = this.internalCurrentPage - 1;
       this.emitChange();
     },
     //  下一页
     next() {
-      if (this.disabled) return;
+      if (this.disabled || this.internalCurrentPage === this.total) return;
       this.internalCurrentPage++;
       // const newVal = this.internalCurrentPage + 1;
       this.emitChange();
@@ -112,6 +112,9 @@ export default {
         font-size: 13px;
         color: #8D8E99;
       }
+    }
+    .disabled-button{
+      cursor: not-allowed;
     }
     .active{
       background: #0c80f9;
