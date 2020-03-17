@@ -14,9 +14,11 @@ export default {
   },
   mounted(){
     for (let node of this.$el.children){
-      if((node.nodeName).toLowerCase!=='button'){
-        console.warn('插入异常')
-      }
+      console.log(node)
+      console.log(node.nodeName)
+      // if((node.nodeName).toLowerCase!=='button'){
+      //   console.warn('插入异常')
+      // }
     }
   },
   methods: {},
