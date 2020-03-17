@@ -1,7 +1,7 @@
 import HCheckBox from './src/checkbox';
 
 HCheckBox.install = function(Vue) {
-  Vue.component(HRadio.name, HRadio);
+  Vue.component(HCheckBox.name, HCheckBox);
 };
 
 export default HCheckBox;
