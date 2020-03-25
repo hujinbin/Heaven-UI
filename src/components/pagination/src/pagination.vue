@@ -10,7 +10,7 @@
         :class="{ active: page === internalCurrentPage }"
         @click="pageChange(page)"
       >{{page}}</li>
-      <li :class="{'disabled-button':internalCurrentPage===total}" @click="next">
+      <li :class="{'disabled-button':internalCurrentPage===pageCount}" @click="next">
         <h-icon name="ios-arrow-right"></h-icon>
       </li>
     </ul>
@@ -33,10 +33,14 @@ export default {
       default: 1,
       type: Number
     }, //总条数
-    pagerCount: {
+    pageCount: {
       default: 20,
       type: Number
     }, // 数据总数
+    pagerCount: {
+      default: 5,
+      type: Number
+    }, // 页码按钮的数量 大于等于 5 且小于等于 18 的奇数
     pageSize: {
       default: 20,
       type: Number
@@ -59,9 +63,13 @@ export default {
   computed: {
     //  页数数组
     pagerList() {
-      const pagerCount = this.pagerCount;
-      const halfPagerCount = (pagerCount - 1) / 2;
-      return [1,2,3]
+      const pageCount = this.pageCount;
+      // const halfPagerCount = (pagerCount - 1) / 2;
+      const array = [];
+       for (let i = 1; i <= pageCount; i++) {
+            array.push(i);
+          }
+      return array
     }
   },
   methods: {
@@ -76,6 +84,7 @@ export default {
     },
     pageChange(page){
       this.internalCurrentPage = page
+      this.$emit('onChange',page)
     },
     //  上一页
     prev() {
@@ -86,7 +95,7 @@ export default {
     },
     //  下一页
     next() {
-      if (this.disabled || this.internalCurrentPage === this.total) return;
+      if (this.disabled || this.internalCurrentPage === this.pageCount) return;
       this.internalCurrentPage++;
       // const newVal = this.internalCurrentPage + 1;
       this.emitChange();
