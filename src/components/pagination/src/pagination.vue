@@ -9,7 +9,11 @@
         :key="index"
         :class="{ active: page === internalCurrentPage }"
         @click="pageChange(page)"
-      >{{page}}</li>
+      >
+      
+       <h-icon v-if="page === 'showMore'" name="h-icon-more"></h-icon>
+       <template v-else>{{page}}</template>
+      </li>
       <li :class="{'disabled-button':internalCurrentPage===pageCount}" @click="next">
         <h-icon name="ios-arrow-right"></h-icon>
       </li>
