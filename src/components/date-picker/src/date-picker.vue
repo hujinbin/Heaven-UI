@@ -1,12 +1,13 @@
 <template>
-   <div class="h-datepicker">
+   <div class="h-date-picker">
 
    </div>
 </template>
 
 <script>
+import HInput from '../../input'
 export default {
-  name: 'HDatepicker',
+  name: 'HDatePicker',
   props:{
   },
   data() {
