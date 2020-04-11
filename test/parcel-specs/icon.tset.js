@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Icon from '../src/icon'
 
-describe('Button.vue', () => {
+describe('Icon.vue', () => {
   it('should render correct contents', () => {
     const Constructor = Vue.extend(Icon)
     const vm = new Constructor().$mount()
