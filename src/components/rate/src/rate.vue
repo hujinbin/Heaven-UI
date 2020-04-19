@@ -1,14 +1,26 @@
 <template>
   <div class="h-rate">
+    <span class="h-rate-item">
 
+    </span>
   </div>
 </template>
 
 <script>
+  import HIcon from '../../icon'
   export default {
     name: "HRate",
+    components:{
+      HIcon
+    },
     props: {
-
+      value:{
+        type:String | Number, //绑定值
+      },
+      disabled:{
+        type:Boolean,
+        default:false,
+      },
     },
     computed: {
     },
@@ -19,6 +31,6 @@
 
 <style lang="scss" scoped>
   .h-rate{
-    
+
   }
 </style>
