@@ -3,7 +3,7 @@ import Icon from '@/components/icon'
 
 describe('icon.vue', () => {
   it('icon是否存在',()=>{
-    expect(Button).to.be.ok;
+    expect(Icon).to.be.ok;
   })
   it('测试name是否生效', () => {
     const Constructor = Vue.extend(Icon)
