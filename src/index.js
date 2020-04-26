@@ -8,6 +8,7 @@ import Input from './components/input/index.js'
 import Pagination from './components/pagination/index.js'
 import Radio from './components/radio/index.js'
 import RadioGroup from './components/radio-group/index.js'
+import Select from './components/select/index.js'
 
 
 
@@ -21,6 +22,7 @@ const components = [
     Pagination,
     Radio,
     RadioGroup,
+    Select,
   ]
   
   const install = function(Vue, opts = {}) {

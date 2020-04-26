@@ -45,6 +45,16 @@
 
     <br />分页
     <h-pagination></h-pagination>
+
+    <br/>选择器
+    <h-select  v-model="selectValue" placeholder="请选择">
+        <h-option
+      v-for="item in options"
+      :key="item.value"
+      :label="item.label"
+      :value="item.value">
+    </h-option>
+    </h-select>
   </div>
 </template>
 
@@ -57,7 +67,23 @@ export default {
       radio:'',
       radioValue: 1,
       checkboxValue1: false,
-      checkboxValue2: true
+      checkboxValue2: true,
+       options: [{
+          value: '选项1',
+          label: '黄金糕'
+        }, {
+          value: '选项2',
+          label: '双皮奶'
+        }, {
+          value: '选项3',
+          label: '蚵仔煎'
+        }, {
+          value: '选项4',
+          label: '龙须面'
+        }, {
+          value: '选项5',
+          label: '北京烤鸭'
+        }],
     };
   },
   methods: {

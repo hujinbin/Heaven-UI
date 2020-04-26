@@ -1,6 +1,7 @@
 <template>
    <div class="h-select">
      <h-input
+     :placeholder="placeholder"
      v-model="value"
       :name="name"
      ></h-input>
@@ -17,14 +18,19 @@ export default {
   props: {
     label: String,
     value: String,
-    disabled: {
+    disabled: { // 是否可用
       type: Boolean,
       default: false
     },
     name: "",
     size: {
       type: Number
-    }
+    },
+    filterable:{ // 是否可搜索
+      type: Boolean,
+      default: false,
+    },
+    placeholder:String,
   },
   components: {
       HInput,
