@@ -1,7 +1,7 @@
 <template>
   <div class="h-rate">
     <span class="h-rate-item">
-
+      <h-icon name="search"></h-icon>
     </span>
   </div>
 </template>
@@ -31,6 +31,8 @@
 
 <style lang="scss" scoped>
   .h-rate{
-
+    .h-rate-item{
+      cursor: pointer;
+    }
   }
 </style>
