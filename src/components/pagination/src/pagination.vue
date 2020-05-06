@@ -55,8 +55,8 @@ export default {
     }
   },
   created() {
-    this.internalCurrentPage = this.currentPage;
-    this.internalPageSize = this.pageSize;
+    this.internalCurrentPage = this.currentPage; //当前选中页码
+    this.internalPageSize = this.pageSize;  // pageSize
   },
   data() {
     return {
@@ -67,12 +67,25 @@ export default {
   computed: {
     //  页数数组
     pagerList() {
-      const pageCount = this.pageCount;
-      // const halfPagerCount = (pagerCount - 1) / 2;
+      const pageCount = this.pageCount; // 页码总数
+      const halfPageCount = pageCount / 2;
+      const pagerCount = this.pagerCount; // 可展示的页码数量
+      const halfPagerCount = (pagerCount - 1) / 2;
       const array = [];
        for (let i = 1; i <= pageCount; i++) {
+         if(i === pageCount){
             array.push(i);
-          }
+         }else if(i === 1){
+            array.push(i);
+         }else if(array.length === pagerCount){
+            array.push('showMore');
+         }else if(array.length< pagerCount){
+           if(this.internalCurrentPage > halfPageCount){
+              
+           }
+           array.push(i);
+         }
+       }
       return array
     }
   },
