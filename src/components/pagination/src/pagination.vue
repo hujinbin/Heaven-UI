@@ -7,11 +7,13 @@
       <li
         v-for="(page,index) in pagerList"
         :key="index"
-        :class="{ active: page === internalCurrentPage }"
+        :class="[
+          { active: page === internalCurrentPage },
+          { more: page === 'showMore' },
+        ]"
         @click="pageChange(page)"
       >
-      
-       <h-icon v-if="page === 'showMore'" name="h-icon-more"></h-icon>
+       <h-icon v-if="page === 'showMore'" name="more"></h-icon>
        <template v-else>{{page}}</template>
       </li>
       <li :class="{'disabled-button':internalCurrentPage===pageCount}" @click="next">
@@ -67,26 +69,50 @@ export default {
   computed: {
     //  页数数组
     pagerList() {
-      const pageCount = this.pageCount; // 页码总数
-      const halfPageCount = pageCount / 2;
-      const pagerCount = this.pagerCount; // 可展示的页码数量
-      const halfPagerCount = (pagerCount - 1) / 2;
-      const array = [];
-       for (let i = 1; i <= pageCount; i++) {
-         if(i === pageCount){
-            array.push(i);
-         }else if(i === 1){
-            array.push(i);
-         }else if(array.length === pagerCount){
-            array.push('showMore');
-         }else if(array.length< pagerCount){
-           if(this.internalCurrentPage > halfPageCount){
-              
-           }
-           array.push(i);
-         }
-       }
-      return array
+      let halfPage = (this.pagerCount - 1) / 2; // 可展示的页码数量
+      let pageCount = this.pageCount;  // 页码总数
+      let preMoreFlag = false;
+      let nextMoreFlag = false;
+      let arr = [];
+      if (pageCount > this.pagerCount) {
+        if (this.internalCurrentPage > this.pagerCount - halfPage) {
+          preMoreFlag = true;
+        }
+        if (this.internalCurrentPage < pageCount - halfPage) {
+          nextMoreFlag = true;
+        }
+      }
+      arr.push(1)
+      //组合页码
+      if (preMoreFlag && !nextMoreFlag) {
+        let startPage = pageCount - (this.pagerCount - 2);
+        for (let i = startPage; i < pageCount; i++) {
+          arr.push(i);
+        }
+        arr.push('showMore');
+      } else if (!preMoreFlag && nextMoreFlag) {
+        for (let i = 2; i < this.pagerCount; i++) {
+          arr.push(i);
+        }
+        arr.push('showMore');
+      } else if (preMoreFlag && nextMoreFlag) {
+        const offset = Math.floor(this.pagerCount / 2) - 1;
+        for (
+          let i = this.internalCurrentPage - offset;
+          i <= this.internalCurrentPage + offset;
+          i++
+        ) {
+          arr.push(i);
+        }
+        arr.push('showMore');
+      } else {
+        for (let i = 2; i < pageCount; i++) {
+          arr.push(i);
+        }
+        arr.push('showMore');
+      }
+      arr.push(this.pageCount)
+      return arr
     }
   },
   methods: {
@@ -100,8 +126,10 @@ export default {
       });
     },
     pageChange(page){
-      this.internalCurrentPage = page
-      this.$emit('onChange',page)
+      if(page !== 'showMore'){
+        this.internalCurrentPage = page
+        this.$emit('onChange',page)
+      }
     },
     //  上一页
     prev() {
@@ -138,6 +166,9 @@ export default {
         font-size: 13px;
         color: #8D8E99;
       }
+      &:hover{
+         color: #0c80f9;
+      }
     }
     .disabled-button{
       cursor: not-allowed;
@@ -146,6 +177,12 @@ export default {
       background: #0c80f9;
       border: 1px solid #0c80f9;
       color: #ffffff;
+      &:hover{
+         color: #ffffff;
+      }
+    }
+    .more{
+      cursor: text;
     }
   }
 </style>
