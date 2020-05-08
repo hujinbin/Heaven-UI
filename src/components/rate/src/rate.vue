@@ -1,6 +1,6 @@
 <template>
   <div class="h-rate">
-    <span class="h-rate-item">
+    <span class="h-rate-item" v-for="(item, key) in max" :key="key">
       <h-icon name="search"></h-icon>
     </span>
   </div>
@@ -20,6 +20,10 @@
       disabled:{
         type:Boolean,
         default:false,
+      },
+      max: {
+        type: Number,
+        default: 5
       },
     },
     computed: {
