@@ -44,7 +44,7 @@
     <h-checkbox v-model="checkboxValue2">多选框2</h-checkbox>
 
     <br />分页
-    <h-pagination></h-pagination>
+    <h-pagination :pageCount="5"></h-pagination>
 
     <br/>选择器
     <h-select  v-model="selectValue" placeholder="请选择">

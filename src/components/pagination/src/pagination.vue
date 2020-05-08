@@ -36,7 +36,7 @@ export default {
       type: Number
     }, // 当前页
     total: {
-      default: 1,
+      default: 20,
       type: Number
     }, //总条数
     pageCount: {
@@ -86,10 +86,11 @@ export default {
       //组合页码
       if (preMoreFlag && !nextMoreFlag) {
         let startPage = pageCount - (this.pagerCount - 2);
+        arr.push('showMore');
         for (let i = startPage; i < pageCount; i++) {
           arr.push(i);
         }
-        arr.push('showMore');
+       
       } else if (!preMoreFlag && nextMoreFlag) {
         for (let i = 2; i < this.pagerCount; i++) {
           arr.push(i);
@@ -97,6 +98,7 @@ export default {
         arr.push('showMore');
       } else if (preMoreFlag && nextMoreFlag) {
         const offset = Math.floor(this.pagerCount / 2) - 1;
+        arr.push('showMore');
         for (
           let i = this.internalCurrentPage - offset;
           i <= this.internalCurrentPage + offset;
@@ -109,7 +111,6 @@ export default {
         for (let i = 2; i < pageCount; i++) {
           arr.push(i);
         }
-        arr.push('showMore');
       }
       arr.push(this.pageCount)
       return arr
