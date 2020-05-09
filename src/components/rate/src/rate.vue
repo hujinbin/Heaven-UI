@@ -1,42 +1,44 @@
 <template>
   <div class="h-rate">
     <span class="h-rate-item" v-for="(item, key) in max" :key="key">
-      <h-icon name="search"></h-icon>
+      <h-icon name="star-on"></h-icon>
+      <h-icon name="star-off"></h-icon>
+      <h-icon name="star-off"></h-icon>
+      <h-icon name="star-off"></h-icon>
+      <h-icon name="star-off"></h-icon>
     </span>
   </div>
 </template>
 
 <script>
-  import HIcon from '../../icon'
-  export default {
-    name: "HRate",
-    components:{
-      HIcon
+import HIcon from "../../icon";
+export default {
+  name: "HRate",
+  components: {
+    HIcon
+  },
+  props: {
+    value: {
+      type: String | Number //绑定值
     },
-    props: {
-      value:{
-        type:String | Number, //绑定值
-      },
-      disabled:{
-        type:Boolean,
-        default:false,
-      },
-      max: {
-        type: Number,
-        default: 5
-      },
+    disabled: {
+      type: Boolean,
+      default: false
     },
-    computed: {
-    },
-    methods: {
+    max: {
+      type: Number,
+      default: 5
     }
-  };
+  },
+  computed: {},
+  methods: {}
+};
 </script>
 
 <style lang="scss" scoped>
-  .h-rate{
-    .h-rate-item{
-      cursor: pointer;
-    }
+.h-rate {
+  .h-rate-item {
+    cursor: pointer;
   }
+}
 </style>
