@@ -2,11 +2,11 @@
   <div class="h-rate">
     <span class="h-rate-item" v-for="(item, key) in max" :key="key">
       <h-icon name="star-on"></h-icon>
-      <h-icon name="star-off"></h-icon>
-      <h-icon name="star-off"></h-icon>
-      <h-icon name="star-off"></h-icon>
-      <h-icon name="star-off"></h-icon>
     </span>
+    <h-icon name="star-off"></h-icon>
+      <h-icon name="star-off"></h-icon>
+      <h-icon name="star-off"></h-icon>
+      <h-icon name="star-off"></h-icon>
   </div>
 </template>
 
@@ -28,6 +28,11 @@ export default {
     max: {
       type: Number,
       default: 5
+    }
+  },
+  data(){
+    return {
+      curValue: this.value,
     }
   },
   computed: {},
