@@ -1,9 +1,10 @@
 <template>
   <div class="h-rate">
     <span class="h-rate-item" v-for="(item, key) in max" :key="key">
-      <h-icon name="star-on"></h-icon>
+      <h-icon name="star-on">
+        <h-icon class="h-rate-decimal" name="star-off"></h-icon>
+      </h-icon>
     </span>
-    <h-icon name="star-off"></h-icon>
       <h-icon name="star-off"></h-icon>
       <h-icon name="star-off"></h-icon>
       <h-icon name="star-off"></h-icon>
