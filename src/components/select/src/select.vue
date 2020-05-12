@@ -2,7 +2,7 @@
    <div class="h-select">
      <h-input
      :placeholder="placeholder"
-     v-model="value"
+      v-model="value"
       :name="name"
      ></h-input>
      <div class="h-select-dropdown">
