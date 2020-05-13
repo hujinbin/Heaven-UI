@@ -43,5 +43,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+   .h-select{
+     display: inline-block;
+     position: relative;
+   }
 </style>
