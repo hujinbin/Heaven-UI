@@ -55,6 +55,9 @@
       :value="item.value">
     </h-option>
     </h-select>
+    
+    <br/>评分
+    <h-rate></h-rate>
   </div>
 </template>
 
