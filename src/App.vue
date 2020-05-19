@@ -48,12 +48,12 @@
 
     <br/>选择器
     <h-select  v-model="selectValue" placeholder="请选择">
-        <h-option
+      <h-option
       v-for="item in options"
       :key="item.value"
       :label="item.label"
       :value="item.value">
-    </h-option>
+      </h-option>
     </h-select>
     
     <br/>评分
@@ -87,6 +87,7 @@ export default {
           value: '选项5',
           label: '北京烤鸭'
         }],
+        selectValue:'',
     };
   },
   methods: {

@@ -48,6 +48,16 @@ export default {
 
 <style lang="scss" scoped>
   .h-option{
-
+    font-size: 14px;
+    padding: 0 20px;
+    position: relative;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #5E5E66;
+    height: 34px;
+    line-height: 34px;
+    box-sizing: border-box;
+    cursor: pointer;
   }
 </style>

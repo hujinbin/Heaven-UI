@@ -4,9 +4,11 @@
      :placeholder="placeholder"
       v-model="value"
       :name="name"
+      @focus="visible = true"
+      @blur="visible = false"
       :readonly="readonly"
      ></h-input>
-     <div class="h-select-dropdown">
+     <div class="h-select-dropdown" v-show="visible">
        <slot></slot>
      </div>
    </div>
@@ -32,6 +34,11 @@ export default {
       default: false,
     },
     placeholder:String,
+  },
+  data(){
+    return {
+      visible: false,
+    }
   },
   components: {
       HInput,

@@ -10,6 +10,8 @@
       <input :type="type" disabled:disabled
         :value='value'
         :placeholder="placeholder"
+        @focus="$emit('focus',$event.target.value)"
+        @blur="$emit('blur',$event.target.value)"
         @change="$emit('change',$event.target.value)"
         @input="$emit('input',$event.target.value)"
       />
