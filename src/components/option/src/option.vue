@@ -59,5 +59,9 @@ export default {
     line-height: 34px;
     box-sizing: border-box;
     cursor: pointer;
+    &:hover{
+      color: #ffffff;
+      background: #0c80f9;
+    }
   }
 </style>
