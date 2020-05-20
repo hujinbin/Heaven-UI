@@ -57,7 +57,7 @@
     </h-select>
     
     <br/>评分
-    <h-rate></h-rate>
+    <h-rate v-model="rateValue"></h-rate>
   </div>
 </template>
 
@@ -88,6 +88,7 @@ export default {
           label: '北京烤鸭'
         }],
         selectValue:'',
+        rateValue: 0,
     };
   },
   methods: {

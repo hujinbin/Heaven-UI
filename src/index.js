@@ -9,6 +9,7 @@ import Option from './components/option/index.js'
 import Pagination from './components/pagination/index.js'
 import Radio from './components/radio/index.js'
 import RadioGroup from './components/radio-group/index.js'
+import Rate from './components/rate/index.js'
 import Select from './components/select/index.js'
 
 
@@ -24,6 +25,7 @@ const components = [
     Pagination,
     Radio,
     RadioGroup,
+    Rate,
     Select,
   ]
   
@@ -53,5 +55,6 @@ export default {
     Pagination,
     Radio,
     RadioGroup,
+    Rate,
     Select,
 }
