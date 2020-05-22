@@ -1,5 +1,6 @@
 <template>
    <div class="h-option"
+    @click.stop="selectOption"
     :class="{
       'selected': itemSelected,
       'is-disabled': disabled,
@@ -42,6 +43,10 @@ export default {
       },
   },
   methods: {
+    selectOption(){
+      this.dispatch('HSelect', 'on-select-selected', this.value);
+      this.$emit('selectOption',this.value)
+    },
   }
 };
 </script>
