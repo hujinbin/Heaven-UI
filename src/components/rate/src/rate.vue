@@ -1,8 +1,15 @@
 <template>
   <div class="h-rate">
     <span class="h-rate-item" v-for="(item, key) in max" :key="key" @click="curValue = item">
-      <h-icon class="h-rate-decimal" name="star-on" v-if="curValue >= item"></h-icon>
-      <h-icon class="h-rate-decimal" name="star-off" v-else></h-icon>
+      <h-icon class="h-rate-icon"
+      :name="curValue >= item ? 'star-on': 'star-off'"
+      :style="getIconStyle(item)">
+      </h-icon>
+       <h-icon class="h-rate-decimal"
+      name="star-on"
+      style="display:none"
+      >
+      </h-icon>
     </span>
   </div>
 </template>
@@ -22,6 +29,12 @@ export default {
       type: Boolean,
       default: false
     },
+     colors: {
+        type: [Array, Object],
+        default() {
+          return ['#ffe000', '#ffe000', '#ffe000'];
+        }
+      }, // 颜色
     max: {
       type: Number,
       default: 5
@@ -33,7 +46,11 @@ export default {
     }
   },
   computed: {},
-  methods: {}
+  methods: {
+    getIconStyle() {
+
+    },
+  }
 };
 </script>
 
@@ -41,6 +58,7 @@ export default {
 .h-rate {
   .h-rate-item {
     cursor: pointer;
+    position: relative;
   }
 }
 </style>
