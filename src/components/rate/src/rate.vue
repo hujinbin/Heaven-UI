@@ -47,8 +47,10 @@ export default {
   },
   computed: {},
   methods: {
-    getIconStyle() {
-
+    getIconStyle(item) {
+      if(this.curValue >= item){
+          return {color : this.colors[0] }
+      }
     },
   }
 };
