@@ -1,7 +1,7 @@
-import HOption from './src/option';
+import HOptionGroup from './src/option-group';
 
-HOption.install = function(Vue) {
-    Vue.component(HOption.name, HOption);
+HOptionGroup.install = function(Vue) {
+    Vue.component(HOptionGroup.name, HOptionGroup);
 };
 
-export default HOption;
+export default HOptionGroup;
