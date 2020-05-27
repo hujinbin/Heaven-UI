@@ -6,7 +6,7 @@
 
 <script>
 export default {
- name: 'h-radio-group',
+ name: 'hRadioGroup',
   props:{
     value: Number || String,
   },
