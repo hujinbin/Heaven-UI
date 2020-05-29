@@ -16,6 +16,7 @@
 
 <script>
   import HInput from '../../input';
+    import HTag from '../../tag';
 export default {
   name: "HSelect",
   props: {
