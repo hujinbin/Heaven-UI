@@ -1,7 +1,7 @@
 <template>
-  <div>
-
-  </div>
+  <form class="h-from">
+    <solt></solt>
+  </form>
 </template>
 
 <script>
@@ -18,5 +18,7 @@
 </script>
 
 <style lang="scss" scoped>
+  .h-from{
 
+  }
 </style>
