@@ -1,6 +1,7 @@
 <template>
-  <form class="h-from">
-    <solt></solt>
+  <form class="h-from"
+    :class="{'h-form-inline': inline }">
+    <slot></slot>
   </form>
 </template>
 
@@ -8,7 +9,12 @@
   export default {
     name: "HFrom",
     props: {
-      model: Object
+      model: Object,
+      rules: Object,
+      inline:{
+        default:false,
+        type:Boolean,
+      },
     },
     computed: {
     },
@@ -19,6 +25,8 @@
 
 <style lang="scss" scoped>
   .h-from{
-
+    &.h-form-inline{
+      
+    }
   }
 </style>
