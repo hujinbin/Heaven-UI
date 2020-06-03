@@ -1,5 +1,10 @@
 <template>
-   <span class="h-tag" @click="handleClick">
+   <span class="h-tag"
+   :class="[
+      type ? `h-tag-${type}` : '',
+      size ? `h-tag-${size}` : '',
+   ]"
+   @click="handleClick">
       <slot></slot>
       <HIcon v-if="closable"
       name="close"
@@ -17,9 +22,9 @@ export default {
    },
    props: {
       text: String,
-      type: String,
+      type: String, // success/info/warning/danger
       color: String,
-      size: String,
+      size: String, // large / medium / small / mini
       closable:Boolean, //	标签是否可以关闭
       checkable:Boolean, //	标签是否可以选择
       checked:Boolean, //	标签的选中状态
