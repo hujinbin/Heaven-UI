@@ -54,5 +54,29 @@ export default {
     border-radius: 4px;
     box-sizing: border-box;
     white-space: nowrap;
+    &.h-tag-success{
+      color: #61d826;
+    }
+    &.h-tag-info{
+      color: #78797d;
+    }
+    &.h-tag-warning{
+      color: #FFB800;
+    }
+    &.h-tag-danger{
+      color: #f13535;
+    }
+    &.h-tag-large{
+      
+    }
+    &.h-tag-medium{
+      
+    }
+    &.h-tag-small{
+      
+    }
+    &.h-tag-mini{
+      
+    }
   }
 </style>
