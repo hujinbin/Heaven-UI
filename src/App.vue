@@ -58,6 +58,9 @@
     
     <br/>评分
     <h-rate v-model="rateValue"></h-rate>
+
+    <br/>标签
+    <h-tag>标签一</h-tag>
   </div>
 </template>
 
