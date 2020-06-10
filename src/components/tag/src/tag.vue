@@ -67,16 +67,20 @@ export default {
       color: #f13535;
     }
     &.h-tag-large{
-      
+      height: 40px;
+      line-height: 38px;
     }
     &.h-tag-medium{
-      
+      height: 36px;
+      line-height: 34px;
     }
     &.h-tag-small{
-      
+      height: 28x;
+      line-height: 26px;
     }
     &.h-tag-mini{
-      
+       height: 24x;
+       line-height: 22px;
     }
   }
 </style>

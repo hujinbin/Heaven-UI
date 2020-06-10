@@ -61,6 +61,7 @@
 
     <br/>标签
     <h-tag>标签一</h-tag>
+    <h-tag type="info">标签二</h-tag>
   </div>
 </template>
 
