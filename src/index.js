@@ -2,9 +2,9 @@ import Alert from './components/alert/index.js'
 import Button from './components/button/index.js'
 import ButtonGroup from './components/button-group/index.js'
 import Checkbox from './components/checkbox/index.js'
-// import CheckboxGroup from './components/checkbox-group/index.js'
+import CheckboxGroup from './components/checkbox-group/index.js'
 import DatePicker from './components/date-picker/index.js'
-// import Form from './components/form/index.js'
+import Form from './components/form/index.js'
 import FormItem from './components/form-item/index.js'
 import Icon from './components/icon/index.js'
 import Input from './components/input/index.js'
@@ -22,9 +22,9 @@ const components = [
     Button,
     ButtonGroup,
     Checkbox,
-    // CheckboxGroup,
+    CheckboxGroup,
     DatePicker,
-    // Form,
+    Form,
     FormItem,
     Icon,
     Input,
@@ -57,9 +57,9 @@ export default {
     Button,
     ButtonGroup,
     Checkbox,
-    // CheckboxGroup,
+    CheckboxGroup,
     DatePicker,
-    // Form,
+    Form,
     FormItem,
     Icon,
     Input,

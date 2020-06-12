@@ -7,7 +7,6 @@
 <script>
 export default {
   name: "h-checkbox-group",
-  
 }
 </script>
 
