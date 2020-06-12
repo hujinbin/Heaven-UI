@@ -1,7 +1,7 @@
-import HFrom from './src/from';
+import HForm from './src/form';
 
-HFrom.install = function(Vue) {
-  Vue.component(HFrom.name, HFrom);
+HForm.install = function(Vue) {
+  Vue.component(HForm.name, HForm);
 };
 
-export default HFrom;
+export default HForm;

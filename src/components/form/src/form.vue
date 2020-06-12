@@ -1,12 +1,12 @@
 <template>
-  <form class="h-from" :class="{'h-form-inline': inline }">
+  <form class="h-form" :class="{'h-form-inline': inline }">
     <slot></slot>
   </form>
 </template>
 
 <script>
 export default {
-  name: "HFrom",
+  name: "HForm",
   props: {
     model: Object,
     rules: Object,
@@ -24,7 +24,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.h-from {
+.h-form {
   &.h-form-inline {
   }
 }
