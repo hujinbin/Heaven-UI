@@ -1,6 +1,8 @@
 <template>
    <div class="h-date-picker">
-
+      <h-input></h-input>
+      <div class="h-date">
+     </div>
    </div>
 </template>
 
@@ -9,6 +11,10 @@ import HInput from '../../input'
 export default {
   name: 'HDatePicker',
   props:{
+    type: {
+      type: String,
+      default: 'date'
+    },
   },
   data() {
     return {}
