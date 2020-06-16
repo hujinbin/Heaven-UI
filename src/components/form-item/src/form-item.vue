@@ -1,5 +1,8 @@
 <template>
   <div class="h-form-item">
+    <div class="h-form-item-label">
+      {{label}}
+    </div>
     <div class="h-form-item-content">
       <slot></slot>
     </div>
