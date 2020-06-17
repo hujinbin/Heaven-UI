@@ -10,10 +10,16 @@ export default {
   props: {
     model: Object,
     rules: Object,
+     labelPosition: String,
+    labelWidth: String,
     inline: {
       default: false,
       type: Boolean
-    }
+    },
+    showMessage: {
+        type: Boolean,
+        default: true
+      },
   },
   data() {
     return {};

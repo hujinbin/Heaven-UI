@@ -27,5 +27,15 @@ export default {
 <style lang="scss" scoped>
 .h-form-item {
     margin-bottom: 22px;
+    .h-form-item-label{
+      text-align: right;
+      vertical-align: middle;
+      float: left;
+      font-size: 14px;
+      color: #606266;
+      line-height: 40px;
+      padding: 0 12px 0 0;
+      box-sizing: border-box;
+    }
 }
 </style>
