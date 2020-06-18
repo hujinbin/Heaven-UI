@@ -67,6 +67,9 @@
     <h-form>
       
     </h-form>
+    <br/>日期选择器
+    <h-date-picker></h-date-picker>
+
   </div>
 </template>
 
