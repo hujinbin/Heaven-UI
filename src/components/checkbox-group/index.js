@@ -1,7 +1,7 @@
 import checkboxGroup from './src/checkbox-group';
 
 checkboxGroup.install = function(Vue) {
-  Vue.component(checkbox-group.name, checkbox-group);
+  Vue.component(checkboxGroup.name, checkboxGroup);
 };
 
-export default checkbox-group;
+export default checkboxGroup;
