@@ -24,6 +24,11 @@
     "url": "https://github.com/hujinbin/Heaven-UI/issues"
   },
   "homepage": "https://github.com/hujinbin/Heaven-UI#readme",
+  "keywords": [
+    "heaven",
+    "vue",
+    "components"
+  ],
   "dependencies": {
     "g": "^2.0.1",
     "karma-cli": "^2.0.0",
