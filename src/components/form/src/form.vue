@@ -21,11 +21,24 @@ export default {
         default: true
       },
   },
+  watch: {
+    // 监听规则
+      rules() {
+        
+      }
+    },
   data() {
     return {};
   },
   computed: {},
-  methods: {}
+  methods: {
+    resetFields() {
+        if (!this.model) {
+          console.warn('表单model是必填的.');
+          return;
+        }
+    },
+  }
 };
 </script>
 

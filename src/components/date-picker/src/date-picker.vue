@@ -12,7 +12,7 @@ export default {
   name: 'HDatePicker',
   props:{
     type: {
-      type: String,
+      type: String, // year/month/date/dates/ week/datetime/datetimerange/ daterange/monthrange
       default: 'date'
     },
   },
