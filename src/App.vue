@@ -59,6 +59,12 @@
     <br/>评分
     <h-rate v-model="rateValue"></h-rate>
 
+ <br/>下拉框
+    <h-select placeholder="请选择地区">
+        <h-option label="上海" value="shanghai"></h-option>
+         <h-option label="北京" value="beijing"></h-option>
+    </h-select>
+
     <br/>标签
     <h-tag>标签一</h-tag>
     <h-tag type="info">标签二</h-tag>
