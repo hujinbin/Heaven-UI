@@ -69,6 +69,8 @@ export default {
        box-shadow: 0 1px 6px rgba(0,0,0,.2);
        position: absolute;
        z-index: 900;
+       left: 0;
+       right: 0;
      }
    }
 </style>
