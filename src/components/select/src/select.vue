@@ -1,5 +1,10 @@
 <template>
    <div class="h-select">
+     <div v-if="multiple" class="h-select-tags">
+         <h-tag
+          type="info">
+        </h-tag>
+     </div>
      <h-input
      :placeholder="placeholder"
       v-model="value"
@@ -34,15 +39,18 @@ export default {
       type: Boolean,
       default: false,
     },
+    multiple: Boolean, // 是否多选
     placeholder:String,
   },
   data(){
     return {
-      visible: false,
+      visible: false,  //下拉框显示状态
+      selected: this.multiple ? [] : {}, // 选中的值
     }
   },
   components: {
       HInput,
+      HTag,
   },
   computed: {
      readonly() {
@@ -50,6 +58,11 @@ export default {
      },
   },
   methods: {
+    emitChange(val) {
+        if (!valueEquals(this.value, val)) {
+          this.$emit('change', val);
+        }
+      },
   }
 };
 </script>
