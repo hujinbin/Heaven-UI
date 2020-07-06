@@ -14,6 +14,9 @@
 <script>
 export default {
   name: "HOption",
+  created(){
+    console.log(11111)
+  },
   props: {
       value: {
         required: true
@@ -44,7 +47,8 @@ export default {
   },
   methods: {
     selectOption(){
-      this.dispatch('HSelect', 'on-select-selected', this.value);
+      console.log(this.value)
+      this.dispatch('HSelect', 'onSelect', this.value);
       this.$emit('selectOption',this.value)
     },
   }

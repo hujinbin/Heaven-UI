@@ -7,10 +7,9 @@
      </div>
      <h-input
      :placeholder="placeholder"
-      v-model="value"
+      v-model="selectedLabel"
       :name="name"
       @focus="visible = true"
-      @blur="visible = false"
       :readonly="readonly"
      ></h-input>
      <div class="h-select-dropdown" v-show="visible">
@@ -31,6 +30,7 @@ export default {
       type: Boolean,
       default: false
     },
+    selectedLabel:'', // 选中的值
     name: "",
     size: {
       type: Number
@@ -41,6 +41,9 @@ export default {
     },
     multiple: Boolean, // 是否多选
     placeholder:String,
+  },
+  created(){
+    this.$on('onSelect',this.onSelect)
   },
   data(){
     return {
@@ -58,11 +61,13 @@ export default {
      },
   },
   methods: {
+    // 选中值改变
     emitChange(val) {
-        if (!valueEquals(this.value, val)) {
-          this.$emit('change', val);
-        }
-      },
+      this.$emit('change', val);
+     },
+     onSelect(option){
+      console.log(option)
+     },
   }
 };
 </script>
