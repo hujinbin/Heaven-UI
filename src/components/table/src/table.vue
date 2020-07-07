@@ -1,5 +1,5 @@
 <template>
-   <div>
+   <div class="h-table">
 
    </div>
 </template>
