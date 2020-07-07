@@ -17,6 +17,7 @@ export default {
   created(){
     console.log(11111)
   },
+  inject: ['select'],
   props: {
       value: {
         required: true
