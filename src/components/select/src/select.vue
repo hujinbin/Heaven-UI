@@ -25,7 +25,7 @@ export default {
   name: "HSelect",
    provide() {
       return {
-        'select': this
+        HSelect: this
       };
     },
   props: {
@@ -71,6 +71,7 @@ export default {
       this.$emit('change', val);
      },
      onSelect(option){
+       console.log('选中的值')
       console.log(option)
      },
   }

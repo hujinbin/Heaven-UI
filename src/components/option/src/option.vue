@@ -49,8 +49,7 @@ export default {
   methods: {
     selectOption(){
       console.log(this.value)
-      this.dispatch('HSelect', 'onSelect', this.value);
-      this.$emit('selectOption',this.value)
+      this.$emit('onSelect',this.value)
     },
   }
 };

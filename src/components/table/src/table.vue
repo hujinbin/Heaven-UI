@@ -1,6 +1,10 @@
 <template>
    <div class="h-table">
-
+      <div class="h-table-header">
+      </div>
+      <div class="h-table-body">
+         <slot></slot>
+      </div>
    </div>
 </template>
 

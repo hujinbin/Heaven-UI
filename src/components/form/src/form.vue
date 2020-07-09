@@ -7,6 +7,11 @@
 <script>
 export default {
   name: "HForm",
+  provide() {
+      return {
+        HForm: this
+      };
+  },
   props: {
     model: Object,
     rules: Object,
