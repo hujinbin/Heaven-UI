@@ -70,6 +70,25 @@
     <br/>日期选择器
     <h-date-picker></h-date-picker>
 
+    <br/>表格
+    <h-table
+      :data="tableData"
+      style="width: 100%">
+      <h-table-column
+        prop="date"
+        label="日期"
+        width="180">
+      </h-table-column>
+      <h-table-column
+        prop="name"
+        label="姓名"
+        width="180">
+      </h-table-column>
+      <h-table-column
+        prop="address"
+        label="地址">
+      </h-table-column>
+    </h-table>
   </div>
 </template>
 
@@ -101,6 +120,23 @@ export default {
         }],
         selectValue:'',
         rateValue: 0,
+        tableData: [{
+            date: '2016-05-02',
+            name: '王小虎',
+            address: '上海市普陀区金沙江路 1518 弄'
+          }, {
+            date: '2016-05-04',
+            name: '王小虎',
+            address: '上海市普陀区金沙江路 1517 弄'
+          }, {
+            date: '2016-05-01',
+            name: '王小虎',
+            address: '上海市普陀区金沙江路 1519 弄'
+          }, {
+            date: '2016-05-03',
+            name: '王小虎',
+            address: '上海市普陀区金沙江路 1516 弄'
+          }]
     };
   },
   methods: {
