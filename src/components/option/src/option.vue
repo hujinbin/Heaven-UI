@@ -12,11 +12,15 @@
 </template>
 
 <script>
+import Emitter from '@/mixins/emitter';
+
 export default {
   name: "HOption",
+  componentName: 'HOption',
   created(){
     console.log(11111)
   },
+  mixins: [Emitter],
   inject: ['select'],
   props: {
       value: {
@@ -49,6 +53,7 @@ export default {
   methods: {
     selectOption(){
       console.log(this.value)
+      this.dispatch('HSelect', 'onSelect', [this, true]);
       this.$emit('onSelect',this.value)
     },
   }

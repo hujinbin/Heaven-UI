@@ -23,6 +23,7 @@
     import HTag from '../../tag';
 export default {
   name: "HSelect",
+  componentName: 'HSelect',
    provide() {
       return {
         HSelect: this

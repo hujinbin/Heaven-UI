@@ -8,7 +8,7 @@
 export default {
  name: 'hRadioGroup',
   props:{
-    value: Number || String,
+    value: {},
   },
 }
 </script>
