@@ -1,5 +1,5 @@
 <template>
-   <div>
+   <div class="">
       
    </div>
 </template>
@@ -12,8 +12,13 @@ export default {
   
    },
    props: {
-    data:Array,
-   },
+     type: {
+      type: String,
+      default: 'default'
+     },
+     label: String,
+     prop: String,
+    },
     methods: {
     
     },
