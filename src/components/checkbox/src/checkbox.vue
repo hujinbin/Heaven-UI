@@ -26,6 +26,7 @@
 <script>
 export default {
   name: "h-checkbox",
+  componentName: 'HCheckbox',
   props: {
     value: Boolean || Number || String,
     label: Boolean || Number || String,
@@ -37,6 +38,10 @@ export default {
     size: {
       type: Number
     }
+  },
+  data() {
+      return {
+      };
   },
   computed: {
     // 选中的值
@@ -54,6 +59,19 @@ export default {
     isChecked() {
       return this.model
     },
+    // 是否多选框组
+    isGroup() {
+        let parent = this.$parent;
+        while (parent) {
+          if (parent.$options.componentName !== 'HCheckboxGroup') {
+            parent = parent.$parent;
+          } else {
+            this._checkboxGroup = parent;
+            return true;
+          }
+        }
+        return false;
+      },
   },
   methods:{
 //    当选框选中事件

@@ -7,6 +7,12 @@
 <script>
 export default {
   name: "h-checkbox-group",
+  componentName: 'HCheckboxGroup',
+   props: {
+      value: {},
+      disabled: Boolean,
+      size: String,
+   },
 }
 </script>
 
