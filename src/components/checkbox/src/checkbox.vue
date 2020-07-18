@@ -24,9 +24,13 @@
 </template>
 
 <script>
+
+import Emitter from '@/mixins/emitter';
+
 export default {
   name: "h-checkbox",
   componentName: 'HCheckbox',
+  mixins: [Emitter],
   props: {
     value: Boolean || Number || String,
     label: Boolean || Number || String,
@@ -41,17 +45,22 @@ export default {
   },
   data() {
       return {
+        selfModel: false,
       };
   },
   computed: {
     // 选中的值
     model: {
       get() {
-        return this.value;
+        return this.isGroup ? this.value : this.selfModel;
       },
       set(val) {
-        if(this.disabled === false){
-          this.$emit("input", val);
+         if (this.isGroup) {
+           
+        } else {
+            if(this.disabled === false){
+               this.$emit("input", val);
+            }
         }
       }
     },
