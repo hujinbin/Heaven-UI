@@ -19,6 +19,10 @@ export default {
   data() {
     return {}
   },
+  watch: {
+    type(type) {
+    }
+  },
   methods: {},
 }
 </script>
