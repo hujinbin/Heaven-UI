@@ -26,13 +26,13 @@
 export default {
   name: "HRadio",
   props: {
-    label: Number | String,
-    value: Number | String,
+    label: Number || String,
+    value: Number || String,
     disabled: {
       type: Boolean,
       default: false
     },
-    name: "",
+    name: String,
     size: {
       type: Number
     }
