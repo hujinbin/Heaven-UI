@@ -14,6 +14,7 @@ import Radio from './components/radio/index.js'
 import RadioGroup from './components/radio-group/index.js'
 import Rate from './components/rate/index.js'
 import Select from './components/select/index.js'
+import Switch from './components/switch/index.js'
 import Table from './components/table/index.js'
 import HTableColumn from './components/table-column/index.js'
 import Tag from './components/tag/index.js'
@@ -35,6 +36,7 @@ const components = [
     RadioGroup,
     Rate,
     Select,
+    Switch,
     Table,
     HTableColumn,
     Tag,
@@ -72,6 +74,7 @@ export default {
     RadioGroup,
     Rate,
     Select,
+    Switch,
     Table,
     HTableColumn,
     Tag,

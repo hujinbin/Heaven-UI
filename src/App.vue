@@ -89,6 +89,11 @@
         label="地址">
       </h-table-column>
     </h-table>
+
+    <br/>开关
+    <H-switch
+  v-model="switchValue">
+</h-switch>
   </div>
 </template>
 
@@ -136,7 +141,8 @@ export default {
             date: '2016-05-03',
             name: '王小虎',
             address: '上海市普陀区金沙江路 1516 弄'
-          }]
+          }],
+          switchValue:false
     };
   },
   methods: {
