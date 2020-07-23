@@ -1,4 +1,4 @@
-import HSwitch from './src/select';
+import HSwitch from './src/switch';
 
 HSwitch.install = function(Vue) {
     Vue.component(HSwitch.name, HSwitch);

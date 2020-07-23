@@ -1,7 +1,7 @@
 <template>
   <div class="h-switch"
     :class="{ 'is-disabled': disabled, 'is-checked': checked }">
-    <input type="checkbox" class="h-switch-input">
+    <input type="checkbox" @change="handleChange" class="h-switch-input">
     <span class="h-switch-core"></span>
   </div>
 </template>
@@ -24,7 +24,11 @@ export default {
       activeValue: {
         type: [Boolean, String, Number],
         default: true
-      },
+      }, // 开启的值
+      inactiveValue: {
+        type: [Boolean, String, Number],
+        default: false
+      }, // 关闭的值
   },
   data(){
     return {
@@ -34,6 +38,13 @@ export default {
   computed: {
       checked() {
         return this.value === this.activeValue;
+      },
+  },
+  methods:{
+      handleChange(event) {
+        const val = this.checked ? this.inactiveValue : this.activeValue;
+        this.$emit('input', val);
+        this.$emit('change', val);
       },
   },
  
