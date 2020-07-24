@@ -2,7 +2,9 @@
   <div class="h-switch"
     :class="{ 'is-disabled': disabled, 'is-checked': checked }">
     <input type="checkbox" @change="handleChange" class="h-switch-input">
+    <span v-if="inactiveText">{{ inactiveText }}</span>
     <span class="h-switch-core"></span>
+    <span v-if="activeText">{{activeText }}</span>
   </div>
 </template>
 
@@ -21,6 +23,8 @@ export default {
         type: Boolean,
         default: false
       },
+      activeText: String,  // 开启显示的文字
+      inactiveText: String, // 关闭显示的文字
       activeValue: {
         type: [Boolean, String, Number],
         default: true
