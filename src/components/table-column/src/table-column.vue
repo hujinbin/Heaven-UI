@@ -1,30 +1,29 @@
 <template>
-   <div class="">
-      
-   </div>
+  <div class></div>
 </template>
 
 <script>
-
 export default {
-   name: 'HTableColumn',
-   components:{
-  
-   },
-   props: {
-     type: {
+  name: "HTableColumn",
+  components: {},
+  props: {
+    type: {
       type: String,
-      default: 'default'
-     },
-     label: String,
-     prop: String,
+      default: "default"
     },
-    methods: {
-    
-    },
-}
+    label: String,
+    className: String,
+    labelClassName: String,
+    prop: String
+  },
+  data() {
+    return {
+      columns: []
+    };
+  },
+  methods: {}
+};
 </script>
 
 <style lang="scss" scoped>
-  
 </style>
