@@ -1,8 +1,8 @@
 import Vue from 'vue'
-import Alert from '@/components/Alert'
+import Alert from '@/components/alert'
 
 describe('Alert.vue', () => {
-  it('Alert是否存在',()=>{
+  it('alert是否存在',()=>{
     expect(Alert).to.be.ok;
   })
 })
