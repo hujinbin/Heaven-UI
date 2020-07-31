@@ -1,7 +1,7 @@
 <template>
   <div class="h-switch"
     :class="{ 'is-disabled': disabled, 'is-checked': checked }">
-    <input type="checkbox" @change="handleChange" class="h-switch-input">
+    <input ref="input" type="checkbox" @change="handleChange" class="h-switch-input">
     <span v-if="inactiveText">{{ inactiveText }}</span>
     <span class="h-switch-core"></span>
     <span v-if="activeText">{{activeText }}</span>
@@ -49,6 +49,9 @@ export default {
         const val = this.checked ? this.inactiveValue : this.activeValue;
         this.$emit('input', val);
         this.$emit('change', val);
+        this.$nextTick(() => {
+          this.$refs.input.checked = this.checked;
+        });
       },
   },
  

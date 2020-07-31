@@ -46,7 +46,7 @@
     <br />分页
     <h-pagination :pageCount="5"></h-pagination>
 
-    <br/>选择器
+    <!-- <br/>选择器
     <h-select  v-model="selectValue" placeholder="请选择">
       <h-option
       v-for="item in options"
@@ -54,7 +54,7 @@
       :label="item.label"
       :value="item.value">
       </h-option>
-    </h-select>
+    </h-select> -->
     
     <br/>评分
     <h-rate v-model="rateValue"></h-rate>
