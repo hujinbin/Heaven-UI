@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <ul class="h-pagination" :class="{disabled:disabled}">
+<div class="h-pagination">
+  <ul :class="{disabled:disabled}">
       <li :class="{'disabled-button':internalCurrentPage===1}"  @click="prev">
         <h-icon name="ios-arrow-left"></h-icon>
       </li>
@@ -20,11 +20,25 @@
         <h-icon name="ios-arrow-right"></h-icon>
       </li>
     </ul>
-  </div>
+    <span class="h-pagination-jump">前往
+    <h-input
+      :min="1"
+      :max="total"
+      v-model="internalCurrentPage"
+      type="number"
+      :disabled="disabled"
+     ></h-input>
+      页
+    </span>
+</div>
+   
 </template>
+
 
 <script>
 import HIcon from "../../icon";
+  import HInput from '../../input';
+
 export default {
   name: "h-pagination",
   components: {
