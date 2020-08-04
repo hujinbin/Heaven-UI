@@ -1,7 +1,7 @@
 <template>
    <div class="h-date-picker">
       <h-input></h-input>
-      <div class="h-date">
+      <div class="h-date" v-show="visible">
      </div>
    </div>
 </template>
@@ -17,7 +17,15 @@ export default {
     },
   },
   data() {
-    return {}
+    return {
+      visible: false
+    }
+  },
+  computed: {
+     rows() {
+        const date = new Date(this.year, this.month, 1);
+        return date;
+      }
   },
   watch: {
     type(type) {
