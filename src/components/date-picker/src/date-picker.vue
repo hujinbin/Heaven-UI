@@ -8,6 +8,7 @@
 
 <script>
 import HInput from '../../input'
+import { getFirstDayOfMonth } from 'untils/date-util'
 export default {
   name: 'HDatePicker',
   props:{
@@ -22,8 +23,15 @@ export default {
     }
   },
   computed: {
+      year() {
+        return this.date.getFullYear();
+      },
+      month() {
+        return this.date.getMonth();
+      },
      rows() {
         const date = new Date(this.year, this.month, 1);
+        let day = getFirstDayOfMonth(date); // 获取当前月的第一天
         return date;
       }
   },
