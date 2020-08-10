@@ -1,6 +1,8 @@
 <template>
    <div class="h-date-picker">
-      <h-input></h-input>
+      <h-input
+      @focus="handleFocus"
+       @change="handleChange"></h-input>
       <div class="h-date" v-show="visible">
      </div>
    </div>
@@ -39,7 +41,13 @@ export default {
     type(type) {
     }
   },
-  methods: {},
+  methods: {
+    handleFocus() {
+      this.$emit('focus', this);
+    },
+    handleChange() {
+    },
+  },
 }
 </script>
 
