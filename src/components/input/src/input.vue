@@ -78,6 +78,14 @@ export default {
       border: 1px solid #0c80f9;
     }
   }
+  input[type=number] {
+    -moz-appearance:textfield;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
   >textarea{
     width: 100%;
     padding: 0 10px;

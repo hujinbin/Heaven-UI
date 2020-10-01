@@ -166,6 +166,9 @@ export default {
 
 <style lang="scss" type="text/scss" scoped>
   .h-pagination {
+    ul{
+      display: inline-block;
+    }
     li{
       display: inline-block;
       border: 1px solid #D7D7DB;
@@ -198,6 +201,13 @@ export default {
     }
     .more{
       cursor: text;
+    }
+    .h-pagination-jump{
+      margin-left: 30px;
+      .h-input{
+        display: inline-block;
+        width: 50px;
+      }
     }
   }
 </style>
