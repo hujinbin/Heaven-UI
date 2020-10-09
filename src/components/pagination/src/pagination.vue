@@ -1,11 +1,14 @@
 <template>
-<div class="h-pagination">
-  <ul :class="{disabled:disabled}">
-      <li :class="{'disabled-button':internalCurrentPage===1}"  @click="prev">
+  <div class="h-pagination">
+    <ul :class="{ disabled: disabled }">
+      <li
+        :class="{ 'disabled-button': internalCurrentPage === 1 }"
+        @click="prev"
+      >
         <h-icon name="ios-arrow-left"></h-icon>
       </li>
       <li
-        v-for="(page,index) in pagerList"
+        v-for="(page, index) in pagerList"
         :key="index"
         :class="[
           { active: page === internalCurrentPage },
@@ -13,78 +16,81 @@
         ]"
         @click="pageChange(page)"
       >
-       <h-icon v-if="page === 'showMore'" name="more"></h-icon>
-       <template v-else>{{page}}</template>
+        <h-icon v-if="page === 'showMore'" name="more"></h-icon>
+        <template v-else>{{ page }}</template>
       </li>
-      <li :class="{'disabled-button':internalCurrentPage===pageCount}" @click="next">
+      <li
+        :class="{ 'disabled-button': internalCurrentPage === pageCount }"
+        @click="next"
+      >
         <h-icon name="ios-arrow-right"></h-icon>
       </li>
     </ul>
-    <span class="h-pagination-jump">前往
-    <h-input
-      :min="1"
-      :max="total"
-      v-model="internalCurrentPage"
-      type="number"
-      :disabled="disabled"
-     ></h-input>
+    <span class="h-pagination-jump"
+      >前往
+      <h-input
+        :min="1"
+        :max="total"
+        v-model="internalCurrentPage"
+        type="number"
+        :disabled="disabled"
+      ></h-input>
       页
     </span>
-</div>
-   
+  </div>
 </template>
 
 
 <script>
 import HIcon from "../../icon";
-  import HInput from '../../input';
+import HInput from "../../input";
 
 export default {
   name: "h-pagination",
   components: {
-    HIcon
+    HIcon,
   },
   props: {
     currentPage: {
       default: 1,
-      type: Number
+      type: Number,
     }, // 当前页
     total: {
       default: 20,
-      type: Number
+      type: Number,
     }, //总条数
     pageCount: {
       default: 20,
-      type: Number
+      type: Number,
     }, // 数据总数
     pagerCount: {
       default: 5,
-      type: Number
+      type: Number,
     }, // 页码按钮的数量 大于等于 5 且小于等于 18 的奇数
     pageSize: {
       default: 20,
-      type: Number
+      type: Number,
     }, //分页码
     disabled: Boolean,
     size: {
-      type: String //分页大小  //small
-    }
+      type: String, //分页大小  //small
+    },
   },
   created() {
     this.internalCurrentPage = this.currentPage; //当前选中页码
-    this.internalPageSize = this.pageSize;  // pageSize
+    this.internalPageSize = this.pageSize; // pageSize
   },
   data() {
     return {
       internalCurrentPage: 1, //加载默认页
-      internalPageSize: 0
+      internalPageSize: 0,
     };
   },
   computed: {
     //  页数数组
     pagerList() {
       let halfPage = (this.pagerCount - 1) / 2; // 可展示的页码数量
-      let pageCount = this.pageCount;  // 页码总数
+      let pageCount = this.pageCount; // 页码总数
       let preMoreFlag = false;
       let nextMoreFlag = false;
       let arr = [];
@@ -96,23 +102,22 @@ export default {
           nextMoreFlag = true;
         }
       }
-      arr.push(1)
+      arr.push(1);
       //组合页码
       if (preMoreFlag && !nextMoreFlag) {
         let startPage = pageCount - (this.pagerCount - 2);
-        arr.push('showMore');
+        arr.push("showMore");
         for (let i = startPage; i < pageCount; i++) {
           arr.push(i);
         }
-       
       } else if (!preMoreFlag && nextMoreFlag) {
         for (let i = 2; i < this.pagerCount; i++) {
           arr.push(i);
         }
-        arr.push('showMore');
+        arr.push("showMore");
       } else if (preMoreFlag && nextMoreFlag) {
         const offset = Math.floor(this.pagerCount / 2) - 1;
-        arr.push('showMore');
+        arr.push("showMore");
         for (
           let i = this.internalCurrentPage - offset;
           i <= this.internalCurrentPage + offset;
@@ -120,15 +125,15 @@ export default {
         ) {
           arr.push(i);
         }
-        arr.push('showMore');
+        arr.push("showMore");
       } else {
         for (let i = 2; i < pageCount; i++) {
           arr.push(i);
         }
       }
-      arr.push(this.pageCount)
-      return arr
-    }
+      arr.push(this.pageCount);
+      return arr;
+    },
   },
   methods: {
     emitChange() {
@@ -140,10 +145,10 @@ export default {
         // }
       });
     },
-    pageChange(page){
-      if(page !== 'showMore'){
-        this.internalCurrentPage = page
-        this.$emit('onChange',page)
+    pageChange(page) {
+      if (page !== "showMore") {
+        this.internalCurrentPage = page;
+        this.$emit("onChange", page);
       }
     },
     //  上一页
@@ -159,55 +164,55 @@ export default {
       this.internalCurrentPage++;
       // const newVal = this.internalCurrentPage + 1;
       this.emitChange();
-    }
-  }
+    },
+  },
 };
 </script>
 
 <style lang="scss" type="text/scss" scoped>
-  .h-pagination {
-    ul{
-      display: inline-block;
-    }
-    li{
-      display: inline-block;
-      border: 1px solid #D7D7DB;
-      vertical-align: middle;
-      padding: 0 10px;
-      height: 28px;
-      line-height: 28px;
-      background-color: #fff;
+.h-pagination {
+  ul {
+    display: inline-block;
+  }
+  li {
+    display: inline-block;
+    border: 1px solid #d7d7db;
+    vertical-align: middle;
+    padding: 0 10px;
+    height: 28px;
+    line-height: 28px;
+    background-color: #fff;
+    font-size: 13px;
+    color: #8d8e99;
+    cursor: pointer;
+    .h-icon {
       font-size: 13px;
-      color: #8D8E99;
-      cursor: pointer;
-      .h-icon{
-        font-size: 13px;
-        color: #8D8E99;
-      }
-      &:hover{
-         color: #0c80f9;
-      }
+      color: #8d8e99;
     }
-    .disabled-button{
-      cursor: not-allowed;
-    }
-    .active{
-      background: #0c80f9;
-      border: 1px solid #0c80f9;
-      color: #ffffff;
-      &:hover{
-         color: #ffffff;
-      }
-    }
-    .more{
-      cursor: text;
-    }
-    .h-pagination-jump{
-      margin-left: 30px;
-      .h-input{
-        display: inline-block;
-        width: 50px;
-      }
+    &:hover {
+      color: #0c80f9;
     }
   }
+  .disabled-button {
+    cursor: not-allowed;
+  }
+  .active {
+    background: #0c80f9;
+    border: 1px solid #0c80f9;
+    color: #ffffff;
+    &:hover {
+      color: #ffffff;
+    }
+  }
+  .more {
+    cursor: text;
+  }
+  .h-pagination-jump {
+    margin-left: 30px;
+    .h-input {
+      display: inline-block;
+      width: 50px;
+    }
+  }
+}
 </style>

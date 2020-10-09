@@ -25,7 +25,7 @@
 
     <br />输入框
     <h-input v-model="value"></h-input>
-    {{value}}
+    {{ value }}
     <h-input type="textarea" v-model="value"></h-input>
 
     <br />单选框
@@ -55,45 +55,28 @@
       :value="item.value">
       </h-option>
     </h-select> -->
-    
-    <br/>评分
+
+    <br />评分
     <h-rate v-model="rateValue"></h-rate>
 
-    <br/>标签
+    <br />标签
     <h-tag>标签一</h-tag>
     <h-tag type="info">标签二</h-tag>
 
-    <br/>表单
-    <h-form>
-      
-    </h-form>
-    <br/>日期选择器
+    <br />表单
+    <h-form> </h-form>
+    <br />日期选择器
     <h-date-picker></h-date-picker>
 
-    <br/>表格
-    <h-table
-      :data="tableData"
-      style="width: 100%">
-      <h-table-column
-        prop="date"
-        label="日期"
-        width="180">
-      </h-table-column>
-      <h-table-column
-        prop="name"
-        label="姓名"
-        width="180">
-      </h-table-column>
-      <h-table-column
-        prop="address"
-        label="地址">
-      </h-table-column>
+    <br />表格
+    <h-table :data="tableData" style="width: 100%">
+      <h-table-column prop="date" label="日期" width="180"> </h-table-column>
+      <h-table-column prop="name" label="姓名" width="180"> </h-table-column>
+      <h-table-column prop="address" label="地址"> </h-table-column>
     </h-table>
 
-    <br/>开关
-    <H-switch
-  v-model="switchValue">
-</h-switch>
+    <br />开关
+    <H-switch v-model="switchValue"> </H-switch>
   </div>
 </template>
 
@@ -103,46 +86,57 @@ export default {
   data() {
     return {
       value: "",
-      radio:'',
+      radio: "",
       radioValue: 1,
       checkboxValue1: false,
       checkboxValue2: true,
-       options: [{
-          value: '选项1',
-          label: '黄金糕'
-        }, {
-          value: '选项2',
-          label: '双皮奶'
-        }, {
-          value: '选项3',
-          label: '蚵仔煎'
-        }, {
-          value: '选项4',
-          label: '龙须面'
-        }, {
-          value: '选项5',
-          label: '北京烤鸭'
-        }],
-        selectValue:'',
-        rateValue: 0,
-        tableData: [{
-            date: '2016-05-02',
-            name: '王小虎',
-            address: '上海市普陀区金沙江路 1518 弄'
-          }, {
-            date: '2016-05-04',
-            name: '王小虎',
-            address: '上海市普陀区金沙江路 1517 弄'
-          }, {
-            date: '2016-05-01',
-            name: '王小虎',
-            address: '上海市普陀区金沙江路 1519 弄'
-          }, {
-            date: '2016-05-03',
-            name: '王小虎',
-            address: '上海市普陀区金沙江路 1516 弄'
-          }],
-          switchValue:false
+      options: [
+        {
+          value: "选项1",
+          label: "黄金糕",
+        },
+        {
+          value: "选项2",
+          label: "双皮奶",
+        },
+        {
+          value: "选项3",
+          label: "蚵仔煎",
+        },
+        {
+          value: "选项4",
+          label: "龙须面",
+        },
+        {
+          value: "选项5",
+          label: "北京烤鸭",
+        },
+      ],
+      selectValue: "",
+      rateValue: 0,
+      tableData: [
+        {
+          date: "2016-05-02",
+          name: "王小虎",
+          address: "上海市普陀区金沙江路 1518 弄",
+        },
+        {
+          date: "2016-05-04",
+          name: "王小虎",
+          address: "上海市普陀区金沙江路 1517 弄",
+        },
+        {
+          date: "2016-05-01",
+          name: "王小虎",
+          address: "上海市普陀区金沙江路 1519 弄",
+        },
+        {
+          date: "2016-05-03",
+          name: "王小虎",
+          address: "上海市普陀区金沙江路 1516 弄",
+        },
+      ],
+      switchValue: false,
     };
   },
   methods: {
@@ -157,8 +151,8 @@ export default {
     },
     showLoading() {
       this.$alert.Loading("提示");
-    }
-  }
+    },
+  },
 };
 </script>
 
