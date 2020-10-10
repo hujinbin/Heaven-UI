@@ -1,5 +1,10 @@
 <template>
    <div class="h-date-picker">
+     <span class="h-date-prefix">
+       <HIcon
+    name="time"
+    ></HIcon>
+     </span>
       <h-input
       @focus="handleFocus"
        @change="handleChange"></h-input>
@@ -10,6 +15,7 @@
 
 <script>
 import HInput from '../../input'
+import HIcon from '../../icon'
 import { getFirstDayOfMonth } from 'untils/date-util'
 export default {
   name: 'HDatePicker',
@@ -52,5 +58,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+  .h-date-picker{
+    position: relative;
+    .h-date-prefix{
+      position: absolute;
+    }
+  }
 </style>

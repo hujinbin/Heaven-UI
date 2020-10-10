@@ -61,7 +61,7 @@ export default {
     },
     // 复选框点击事件
     switchChange() {
-      !this.switchDisabled && this.handleChange();
+      !this.disabled && this.handleChange();
     },
   },
 };
