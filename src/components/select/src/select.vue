@@ -26,7 +26,7 @@ export default {
   componentName: 'HSelect',
    provide() {
       return {
-        HSelect: this
+        'select': this
       };
     },
   props: {

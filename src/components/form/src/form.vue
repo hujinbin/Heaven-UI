@@ -9,7 +9,7 @@ export default {
   name: "HForm",
   provide() {
       return {
-        HForm: this
+        'form': this
       };
   },
   props: {
