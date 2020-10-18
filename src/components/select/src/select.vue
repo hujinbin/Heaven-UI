@@ -7,7 +7,7 @@
      </div>
      <h-input
      :placeholder="placeholder"
-      v-model="selectedLabel"
+      v-model="query"
       :name="name"
       @focus="visible = true"
       :readonly="readonly"
@@ -55,6 +55,7 @@ export default {
     return {
       visible: false,  //下拉框显示状态
       selected: this.multiple ? [] : {}, // 选中的值
+      query:'', // 显示的值
     }
   },
   components: {
@@ -73,7 +74,13 @@ export default {
      },
      onSelect(option){
        console.log('选中的值')
+      
       console.log(option)
+      this.selected = option
+      if(!this.multiple){
+        this.query=option.label;
+        this.visible = false;
+      }
      },
   }
 };

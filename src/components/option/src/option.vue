@@ -53,7 +53,12 @@ export default {
   methods: {
     selectOption(){
       console.log(this.value)
-      this.select.$emit('onSelect',this.value)
+      console.log(this.label)
+      const data={
+        value:this.value,
+        label:this.label,
+      }
+      this.select.$emit('onSelect',data)
     },
   }
 };
