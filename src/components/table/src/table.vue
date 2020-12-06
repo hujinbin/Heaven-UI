@@ -3,7 +3,14 @@
     <div class="hidden-columns" ref="hiddenColumns">
       <slot></slot>
     </div>
-    <div class="h-table-header"></div>
+    <table class="h-table-header"
+     cellspacing="0"
+        cellpadding="0"
+        border="0">
+        <colgroup>
+        </colgroup>
+         <thead></thead>
+    </table>
     <div class="h-table-body">
       <div
         v-if="!data || data.length === 0"
