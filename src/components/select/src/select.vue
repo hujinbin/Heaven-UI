@@ -1,5 +1,5 @@
 <template>
-   <div class="h-select">
+   <div class="h-select" ref="hSelect">
      <div v-if="multiple" class="h-select-tags">
          <h-tag
           type="info">
@@ -51,6 +51,12 @@ export default {
   created(){
     this.$on('onSelect',this.onSelect)
   },
+  mounted(){
+    window.addEventListener('click',this.hideDropdown)
+  },
+  beforeDestroy(){
+     window.removeEventListener('click',this.hideDropdown)
+  },
   data(){
     return {
       visible: false,  //下拉框显示状态
@@ -72,15 +78,23 @@ export default {
     emitChange(val) {
       this.$emit('change', val);
      },
+    //  下拉框选中事件
      onSelect(option){
        console.log('选中的值')
-      
       console.log(option)
       this.selected = option
       if(!this.multiple){
         this.query=option.label;
         this.visible = false;
       }
+     },
+    //  隐藏下拉框
+     hideDropdown(e){
+      //  this.refs.hSelect
+      console.log(e.target)
+        if(!this.$refs.hSelect.contains(e.target)){
+          this.visible = false;
+        }
      },
   }
 };
