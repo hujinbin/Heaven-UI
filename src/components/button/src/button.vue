@@ -53,7 +53,7 @@ export default {
     font-size: 14px;
     border-radius: 2px;
     cursor: pointer;
-    &:hover,&.active,&.visited{
+    &:hover,&:active,&:visited,&:focus{
       opacity: 0.9;
       outline: none;
     }
