@@ -27,5 +27,8 @@ export default {
    .h-button-group{
       display: inline-flex;
       vertical-align: middle;
+      .h-button{
+        border-radius: 0;
+      }
    }
 </style>

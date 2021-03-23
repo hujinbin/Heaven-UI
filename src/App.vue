@@ -12,10 +12,11 @@
     <h-button type="warning" size="mini">警告</h-button>
     <h-button type="danger" loading>加载按钮</h-button>
     <h-button type="primary" icon="edit"></h-button>
+    <h-button type="primary" disabled>禁用</h-button>
     <br />按钮组
     <h-button-group>
-      <h-button>默认</h-button>
-      <h-button type="primary">简约</h-button>
+      <h-button type="primary">上一页</h-button>
+      <h-button type="primary">下一页</h-button>
     </h-button-group>
 
     <br />弹窗

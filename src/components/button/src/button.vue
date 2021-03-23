@@ -1,5 +1,5 @@
 <template>
-    <button class="h-button" :class="`h-button-${type} h-button-${size}`" @click="$emit('click')" :disabled="disabled">
+    <button class="h-button" :class="[`h-button-${type} h-button-${size}`,disabled ? 'is-disabled' :'' ]" @click="$emit('click')" :disabled="disabled">
       <h-icon v-if="icon && !loading" :name="icon"></h-icon>
       <h-icon v-else-if="loading" name="loading"></h-icon>
       <slot></slot>
@@ -104,5 +104,10 @@ export default {
       height: 24px;
     line-height: 24px;
      font-size: 10px;
+  }
+  // 禁用
+  .is-disabled{
+    cursor: not-allowed;
+    opacity: 0.9;
   }
 </style>
