@@ -10,7 +10,8 @@
     "start": "npm run dev",
     "build": "node build/build.js",
     "lint": "eslint src/**/* test/**/* packages/**/* build/**/* --quiet",
-    "test": "cross-env BABEL_ENV=test karma start test/karma.conf.js --single-run",
+    "test:k": "cross-env BABEL_ENV=test karma start test/karma.conf.js --single-run",
+    "test": "cross-env BABEL_ENV=test karma start test/karma.conf.js --single-run"
   },
   "repository": {
     "type": "git",
