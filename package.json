@@ -1,6 +1,6 @@
 {
   "name": "heaven-ui",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "这是一个vue的UI框架",
   "main": "./lib/heaven-ui.min.js",
   "author": "hujinbin <437044048@qq.com>",
