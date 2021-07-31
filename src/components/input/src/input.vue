@@ -1,5 +1,8 @@
 <template>
-  <div class="h-input">
+  <div class="h-input"
+    :class="[
+    {'h-input-mini':size === 'mini'}
+    ]">
     <textarea
       v-if="type === 'textarea'"
       :value="value"
@@ -53,6 +56,7 @@ export default {
     error: {
       type: String,
     },
+    size: String, //输入框大小
   },
   data() {
     return {};
@@ -105,6 +109,12 @@ export default {
     padding: 5px 10px;
     &:focus {
       border: 1px solid #0c80f9;
+    }
+  }
+  &.h-input-mini{
+    > input {
+       height: 30px;
+      line-height: 30px;
     }
   }
   .error-text {

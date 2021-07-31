@@ -33,6 +33,7 @@
         :max="total"
         v-model="internalCurrentPage"
         type="number"
+        size="mini"
         :disabled="disabled"
       ></h-input>
       页
@@ -210,7 +211,7 @@ export default {
   .h-pagination-jump {
     margin-left: 30px;
     .h-input {
-      display: inline-block;
+      display: inline-block; 
       width: 50px;
     }
   }
