@@ -1,11 +1,13 @@
 <template>
   <div id="app">
-    icon 测试
+    <h1>icon 测试</h1>
+    
     <h-icon name="loading"></h-icon>
     <h-icon name="set"></h-icon>
     <h-icon name="del"></h-icon>
 
-    <br />按钮测试
+    <br />
+    <h1>按钮测试</h1>
     <h-button>默认</h-button>
     <h-button type="primary">简约</h-button>
     <h-button type="success">成功</h-button>
@@ -13,41 +15,49 @@
     <h-button type="danger" loading>加载按钮</h-button>
     <h-button type="primary" icon="edit"></h-button>
     <h-button type="primary" disabled>禁用</h-button>
-    <br />按钮组
+    <br />
+    <h1>按钮组</h1>
     <h-button-group>
       <h-button type="primary">上一页</h-button>
       <h-button type="primary">下一页</h-button>
     </h-button-group>
 
-    <br />弹窗
+    <br />
+    <h1>弹窗</h1>
     <h-button type="danger" @click="showAlert">打开弹窗</h-button>
     <h-button type="info" @click="showMsgAlert">打开消息弹窗</h-button>
     <h-button type="info" @click="showLoading">打开加载</h-button>
 
-    <br />输入框
+    <br />
+    <h1>输入框</h1>
     <h-input v-model="value"></h-input>
     {{ value }}
     <h-input type="textarea" v-model="value"></h-input>
 
-    <br />单选框
+    <br />
+    <h1>单选框</h1>
     <h-radio :label="1" v-model="radioValue">男</h-radio>
     <h-radio :label="2" v-model="radioValue">女</h-radio>
     <h-radio :label="1" v-model="radioValue" disabled>男</h-radio>
     <h-radio :label="2" v-model="radioValue" disabled>女</h-radio>
-    <br />单选框组
+    <br />
+    <h1>单选框组</h1>
     <h-radio-group v-model="radio">
       <h-radio :label="1">备选项</h-radio>
       <h-radio :label="2">备选项</h-radio>
       <h-radio :label="3">备选项</h-radio>
     </h-radio-group>
-    <br />多选框
+    <br />
+    <h1>多选框</h1>
     <h-checkbox v-model="checkboxValue1">多选框1</h-checkbox>
     <h-checkbox v-model="checkboxValue2">多选框2</h-checkbox>
 
-    <br />分页
+    <br />
+    <h1>分页</h1>
     <h-pagination :pageCount="5"></h-pagination>
 
-    <br/>选择器
+    <br/>
+    <h1>选择器</h1>
     <h-select  v-model="selectValue" placeholder="请选择">
       <h-option
       v-for="item in options"
@@ -57,27 +67,41 @@
       </h-option>
     </h-select>
 
-    <br />评分
+    <br />
+    <h1>评分</h1>
     <h-rate v-model="rateValue"></h-rate>
 
-    <br />标签
+    <br />
+    <h1>标签</h1> 
     <h-tag>标签一</h-tag>
     <h-tag type="info">标签二</h-tag>
 
-    <br />表单
-    <h-form> </h-form>
-    <br />日期选择器
+    <br />
+    <h1>表单</h1> 
+    <h-form>
+      <h-form-item label="活动名称">
+        <h-input v-model="value"></h-input>
+      </h-form-item>
+      <h-form-item label="是否开启">
+        <h-switch v-model="switchValue"> </h-switch>
+      </h-form-item>
+    </h-form>
+    <br />
+    <h1>日期选择器</h1> 
     <h-date-picker></h-date-picker>
 
-    <br />表格
+    <br />
+    <h1>表格</h1> 
     <h-table :data="tableData" style="width: 100%">
       <h-table-column prop="date" label="日期" width="180"> </h-table-column>
       <h-table-column prop="name" label="姓名" width="180"> </h-table-column>
       <h-table-column prop="address" label="地址"> </h-table-column>
     </h-table>
 
-    <br />开关
-    <H-switch v-model="switchValue"> </H-switch>
+    <br />
+    <h1>开关</h1> 
+    
+    <h-switch v-model="switchValue"> </h-switch>
   </div>
 </template>
 

@@ -1,6 +1,6 @@
 <template>
   <div class="h-form-item">
-    <div class="h-form-item-label">
+    <div class="h-form-item-label" :style="{width:(labelWidth || 'auto')}">
       {{label}}
     </div>
     <div class="h-form-item-content">
@@ -11,7 +11,7 @@
 
 <script>
 export default {
-  name: "HFromItem",
+  name: "HFormItem",
   props: {
       label: String,
       labelWidth: String,
@@ -26,16 +26,20 @@ export default {
 
 <style lang="scss" scoped>
 .h-form-item {
-    margin-bottom: 22px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
     .h-form-item-label{
       text-align: right;
       vertical-align: middle;
-      float: left;
       font-size: 14px;
       color: #606266;
       line-height: 40px;
       padding: 0 12px 0 0;
       box-sizing: border-box;
-    }
+   }
+   .h-form-item-content{
+      flex: 1;
+   }
 }
 </style>
