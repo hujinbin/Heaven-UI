@@ -13,6 +13,7 @@ import Pagination from './components/pagination/index.js'
 import Radio from './components/radio/index.js'
 import RadioGroup from './components/radio-group/index.js'
 import Rate from './components/rate/index.js'
+import Row from './components/row/index.js'
 import Select from './components/select/index.js'
 import Switch from './components/switch/index.js'
 import Table from './components/table/index.js'
@@ -35,6 +36,7 @@ const components = [
     Radio,
     RadioGroup,
     Rate,
+    Row,
     Select,
     Switch,
     Table,
@@ -73,6 +75,7 @@ export default {
     Radio,
     RadioGroup,
     Rate,
+    Row,
     Select,
     Switch,
     Table,
