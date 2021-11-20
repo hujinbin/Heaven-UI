@@ -5,5 +5,5 @@ vueUI组件
 npm install Heaven-UI
 
 线上文档
-https://ui.leheavengame.com/
-https://heaven-ui.github.io/
+
+* https://ui.leheavengame.com/
