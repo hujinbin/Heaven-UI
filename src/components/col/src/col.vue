@@ -1,5 +1,6 @@
+<script>
 export default {
-  name: 'ElCol',
+  name: 'HCol',
 
   props: {
     span: {
@@ -23,7 +24,7 @@ export default {
   computed: {
     gutter() {
       let parent = this.$parent;
-      while (parent && parent.$options.componentName !== 'ElRow') {
+      while (parent && parent.$options.componentName !== 'HRow') {
         parent = parent.$parent;
       }
       return parent ? parent.gutter : 0;
@@ -64,16 +65,20 @@ export default {
     });
 
     return h(this.tag, {
-      class: ['el-col', classList],
+      class: ['h-col', classList],
       style
     }, this.$slots.default);
   }
 };
-
+</script>
 
 <style lang="scss" scoped>
-.h-row{
-    position: relative;
-    box-sizing: border-box;
+.h-col{
+  float: left;
+}
+@for $i from 1 through 24{
+  .h-col-#{$i}{
+    width: #{$i/24 *100 + '%'};
+  }
 }
 </style>

@@ -48,5 +48,10 @@ export default {
 .h-row{
     position: relative;
     box-sizing: border-box;
+    &::after{
+      content: '';
+      display: inline-block;
+      clear: both;
+    }
 }
 </style>

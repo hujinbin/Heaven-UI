@@ -3,6 +3,7 @@ import Button from './components/button/index.js'
 import ButtonGroup from './components/button-group/index.js'
 import Checkbox from './components/checkbox/index.js'
 import CheckboxGroup from './components/checkbox-group/index.js'
+import Col from './components/col/index.js'
 import DatePicker from './components/date-picker/index.js'
 import Form from './components/form/index.js'
 import FormItem from './components/form-item/index.js'
@@ -26,6 +27,7 @@ const components = [
     ButtonGroup,
     Checkbox,
     CheckboxGroup,
+    Col,
     DatePicker,
     Form,
     FormItem,
@@ -50,9 +52,6 @@ const components = [
     })
     Vue.prototype.$alert = Alert;
   }
-
-console.log('Heaven0.0.2')
-
 /* 支持使用标签的方式引入 */
 if (typeof window !== 'undefined' && window.Vue) {
    install(window.Vue);
@@ -60,25 +59,5 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 export default {
     install,
-    Alert,
-    Button,
-    ButtonGroup,
-    Checkbox,
-    CheckboxGroup,
-    DatePicker,
-    Form,
-    FormItem,
-    Icon,
-    Input,
-    Option,
-    Pagination,
-    Radio,
-    RadioGroup,
-    Rate,
-    Row,
-    Select,
-    Switch,
-    Table,
-    HTableColumn,
-    Tag,
+    ...components,
 }
