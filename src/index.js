@@ -1,4 +1,5 @@
 import Alert from './components/alert/index.js'
+import Aside from './components/aside/index.js'
 import Button from './components/button/index.js'
 import ButtonGroup from './components/button-group/index.js'
 import Checkbox from './components/checkbox/index.js'
@@ -7,6 +8,7 @@ import Col from './components/col/index.js'
 import DatePicker from './components/date-picker/index.js'
 import Form from './components/form/index.js'
 import FormItem from './components/form-item/index.js'
+import Header from './components/header/index.js'
 import Icon from './components/icon/index.js'
 import Input from './components/input/index.js'
 import Option from './components/option/index.js'
@@ -23,6 +25,7 @@ import Tag from './components/tag/index.js'
 
 
 const components = [
+    Aside,
     Button,
     ButtonGroup,
     Checkbox,
@@ -31,6 +34,7 @@ const components = [
     DatePicker,
     Form,
     FormItem,
+    Header,
     Icon,
     Input,
     Option,
