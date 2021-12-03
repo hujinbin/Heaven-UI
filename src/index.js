@@ -5,12 +5,15 @@ import ButtonGroup from './components/button-group/index.js'
 import Checkbox from './components/checkbox/index.js'
 import CheckboxGroup from './components/checkbox-group/index.js'
 import Col from './components/col/index.js'
+import Container from './components/container/index.js'
 import DatePicker from './components/date-picker/index.js'
+import Footer from './components/footer/index.js'
 import Form from './components/form/index.js'
 import FormItem from './components/form-item/index.js'
 import Header from './components/header/index.js'
 import Icon from './components/icon/index.js'
 import Input from './components/input/index.js'
+import Main from './components/main/index.js'
 import Option from './components/option/index.js'
 import Pagination from './components/pagination/index.js'
 import Radio from './components/radio/index.js'
@@ -31,12 +34,15 @@ const components = [
     Checkbox,
     CheckboxGroup,
     Col,
+    Container,
     DatePicker,
+    Footer,
     Form,
     FormItem,
     Header,
     Icon,
     Input,
+    Main,
     Option,
     Pagination,
     Radio,

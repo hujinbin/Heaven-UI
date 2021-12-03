@@ -1,4 +1,4 @@
-import Container from './src/main';
+import Container from './src/container';
 
 /* istanbul ignore next */
 Container.install = function(Vue) {
