@@ -51,3 +51,24 @@ export default {
   }
 };
 </script>
+
+<style lang="less" scoped>
+.h-badge{
+  position: relative;
+  vertical-align: middle;
+  display: inline-block;
+}
+.h-badge__content{
+  background-color: #f13535;
+  border-radius: 10px;
+  color: #fff;
+  display: inline-block;
+    font-size: 12px;
+    height: 18px;
+    line-height: 18px;
+    padding: 0 6px;
+    text-align: center;
+    white-space: nowrap;
+    border: 1px solid #fff;
+}
+</style>
