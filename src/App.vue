@@ -151,11 +151,11 @@
 
   <h1>Layout 布局</h1> 
    <h-container>
-  <h-aside width="200px">Aside</h-aside>
+  <h-aside style="background:#F7F8FA;" width="200px">Aside</h-aside>
   <h-container>
-    <h-header>Header</h-header>
-    <h-main>Main</h-main>
-    <h-footer>Footer</h-footer>
+    <h-header style="background:#8D8E99;">Header</h-header>
+    <h-main style="background:#D7D7DB;">Main</h-main>
+    <h-footer style="background:#B0B1B8;">Footer</h-footer>
   </h-container>
 </h-container>
    <br />

@@ -20,5 +20,7 @@
 </script>
 
 <style lang="scss" scoped>
-
+.h-aside{
+  flex-shrink: 0;
+}
 </style>

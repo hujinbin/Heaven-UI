@@ -35,7 +35,11 @@
 <style lang="scss" scoped>
 .h-container{
   display: flex;
-  flex: auto;
-  flex-direction: column;
+  flex-direction: row;
+  flex: 1;
+  flex-basis: auto;
+  &.is-vertical{
+    flex-direction: column;
+  }
 }
 </style>

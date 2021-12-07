@@ -12,5 +12,9 @@
 </script>
 
 <style lang="scss" scoped>
-
+.h-main{
+  display: block;
+  flex: 1;
+  flex-basis: auto;
+}
 </style>
