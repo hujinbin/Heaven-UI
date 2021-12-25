@@ -7,8 +7,8 @@
      cellspacing="0"
         cellpadding="0"
         border="0">
-        <colgroup>
-        </colgroup>
+        <!-- <colgroup>
+        </colgroup> -->
          <thead></thead>
     </table>
     <div class="h-table-body">
@@ -41,8 +41,8 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.table {
+<style lang="scss">
+.h-table {
   position: relative;
   overflow: hidden;
   box-sizing: border-box;
@@ -51,5 +51,17 @@ export default {
   background: #fff;
   font-size: 14px;
   color: #1b1c33;
+  tr{
+
+  }
+  .h-table__cell{
+    padding: 12px 0;
+    min-width: 0;
+    box-sizing: border-box;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+    position: relative;
+    text-align: left;
+  }
 }
 </style>

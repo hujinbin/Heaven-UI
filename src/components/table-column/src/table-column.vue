@@ -1,5 +1,11 @@
 <template>
-  <div></div>
+  <div>
+    <tr v-for="(item,index) in data" :key="index" class="h-table__row">
+      <td class="h-table__cell" v-for="(value, key) in item" :key="key">
+        <div class="cell">{{value}}</div>
+      </td>
+    </tr>
+  </div>
 </template>
 
 <script>
@@ -9,21 +15,29 @@ export default {
   props: {
     type: {
       type: String,
-      default: "default"
+      default: "default",
     },
     label: String,
     className: String,
     labelClassName: String,
-    prop: String
+    prop: String,
   },
   data() {
     return {
-      columns: []
+      columns: [],
+      data:[],
     };
   },
-  methods: {}
+  created(){
+    this.data = this.$parent.data;
+    console.log(this.$parent)
+    console.log(this.data)
+    console.log(this.prop)
+    console.log(this.$parent.$el)
+  },
+  methods: {},
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 </style>

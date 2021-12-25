@@ -17,9 +17,6 @@ import Emitter from '@/mixins/emitter';
 export default {
   name: "HOption",
   componentName: 'HOption',
-  created(){
-    console.log(11111)
-  },
   mixins: [Emitter],
   inject: ['select'],
   props: {
@@ -52,8 +49,6 @@ export default {
   },
   methods: {
     selectOption(){
-      console.log(this.value)
-      console.log(this.label)
       const data={
         value:this.value,
         label:this.label,

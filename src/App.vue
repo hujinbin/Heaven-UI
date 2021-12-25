@@ -33,7 +33,7 @@
 
     <br />
     <h1>input 输入框</h1>
-    <h-input v-model="value"></h-input>
+    <h-input v-model="value" placeholder="请输入"></h-input>
     {{ value }}
     <h-input type="textarea" v-model="value"></h-input>
 
@@ -51,6 +51,7 @@
       <h-radio :label="3">备选项</h-radio>
     </h-radio-group>
     <br />
+
     <h1>checkbox 多选框</h1>
     <h-checkbox v-model="checkboxValue1">多选框1</h-checkbox>
     <h-checkbox v-model="checkboxValue2">多选框2</h-checkbox>
@@ -222,9 +223,6 @@ export default {
     };
   },
   methods: {
-    add() {
-      console.log(1111);
-    },
     showAlert() {
       this.$alert("提示");
     },

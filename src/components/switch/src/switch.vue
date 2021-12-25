@@ -56,7 +56,6 @@ export default {
       this.$emit("change", val);
       this.$nextTick(() => {
         this.$refs.input.checked = val;
-        console.log(this.checked);
       });
     },
     // 复选框点击事件

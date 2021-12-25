@@ -80,8 +80,6 @@ export default {
      },
     //  下拉框选中事件
      onSelect(option){
-       console.log('选中的值')
-      console.log(option)
       this.selected = option
       if(!this.multiple){
         this.query=option.label;
@@ -90,8 +88,6 @@ export default {
      },
     //  隐藏下拉框
      hideDropdown(e){
-      //  this.refs.hSelect
-      console.log(e.target)
         if(!this.$refs.hSelect.contains(e.target)){
           this.visible = false;
         }

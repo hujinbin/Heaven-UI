@@ -32,9 +32,6 @@ export default {
     return {
     }
   },
-  mounted(){
-    console.log(this.text)
-  },
   methods: {},
 }
 </script>

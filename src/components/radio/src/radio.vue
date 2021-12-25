@@ -37,13 +37,9 @@ export default {
       type: Number
     }
   },
-  created(){
-    console.log(this.isGroup)
-  },
   computed: {
       isGroup() {
         let parent = this.$parent;
-        console.log(parent.$options.name)
         if (parent.$options.name !== 'hRadioGroup') {
            return true;
         }
