@@ -1,14 +1,11 @@
 <template>
   <div>
-    <tr v-for="(item,index) in data" :key="index" class="h-table__row">
-      <td class="h-table__cell" v-for="(value, key) in item" :key="key">
-        <div class="cell">{{value}}</div>
-      </td>
-    </tr>
   </div>
 </template>
 
 <script>
+let columnIdSeed = 1;
+
 export default {
   name: "HTableColumn",
   components: {},
@@ -25,15 +22,15 @@ export default {
   data() {
     return {
       columns: [],
-      data:[],
+      columnId:'',
     };
   },
   created(){
-    this.data = this.$parent.data;
+    console.log(this)
+    let parent = this.$parent;
+    console.log(this.$attrs)
+    this.columnId = (parent.tableId || parent.columnId) + '_column_' + columnIdSeed++;
     console.log(this.$parent)
-    console.log(this.data)
-    console.log(this.prop)
-    console.log(this.$parent.$el)
   },
   methods: {},
 };

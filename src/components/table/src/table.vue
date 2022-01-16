@@ -21,12 +21,18 @@
           <slot name="empty">{{ emptyText }}</slot>
         </span>
       </div>
-      <slot></slot>
+       <tr v-for="(item,index) in data" :key="index" class="h-table__row">
+      <td class="h-table__cell" v-for="(value, key) in item" :key="key">
+        <div class="cell">{{value}}</div>
+      </td>
+    </tr>
     </div>
   </div>
 </template>
 
 <script>
+let tableIdSeed = 1;
+
 export default {
   name: "HTable",
   components: {},
@@ -36,6 +42,9 @@ export default {
       type: String,
       default: "暂无数据",
     },
+  },
+  created(){
+    this.tableId = 'h-table_' + tableIdSeed++;
   },
   methods: {},
 };
@@ -51,8 +60,8 @@ export default {
   background: #fff;
   font-size: 14px;
   color: #1b1c33;
-  tr{
-
+  .h-table__row{
+    width: 100%;
   }
   .h-table__cell{
     padding: 12px 0;
